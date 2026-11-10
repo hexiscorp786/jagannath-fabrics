@@ -1592,7 +1592,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
       b: "Lot-matching across running designs and shade cards."
     }, {
       t: "Private-label orders",
-      b: "Custom motifs on request — minimums apply."
+      b: "Custom motifs on request, in any quantity."
     }].map((x, i) => /*#__PURE__*/React.createElement("div", {
       key: i,
       style: {
@@ -2573,11 +2573,11 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
         color: "var(--ink-60)",
         padding: "4px 0"
       }
-    }, "Minimum order: ", /*#__PURE__*/React.createElement("strong", {
+    }, "Order quantity: ", /*#__PURE__*/React.createElement("strong", {
       style: {
         color: "var(--ink)"
       }
-    }, "500 m"), " \xB7 Sampling lead time: ", /*#__PURE__*/React.createElement("strong", {
+    }, "Any length"), " \xB7 Sampling lead time: ", /*#__PURE__*/React.createElement("strong", {
       style: {
         color: "var(--ink)"
       }
@@ -2882,7 +2882,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
       currency: "USD",
       type: "Jacquard",
       use: "Dress Material",
-      qty: "500",
+      qty: "100",
       message: "",
       newsletter: true
     });
@@ -2898,7 +2898,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
       if (f.phone && !/^[+()\s\d-]{7,}$/.test(f.phone)) e.phone = "Check the phone format";
       if (f.market === "Export" && !f.country.trim()) e.country = "Tell us your country";
       if (!f.message.trim()) e.message = "A brief message helps us reply faster";else if (f.message.trim().length < 10) e.message = "Add a little more detail";
-      if (!/^\d+$/.test(f.qty) || parseInt(f.qty) < 100) e.qty = "Minimum order is 500 m — enter 100+";
+      if (!/^\d+$/.test(f.qty) || parseInt(f.qty) < 1) e.qty = "Enter the quantity in meters (any amount is fine)";
       return e;
     };
     const set = (k, v) => {
@@ -3063,7 +3063,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
           setForm({
             ...form,
             message: "",
-            qty: "500"
+            qty: "100"
           });
         }
       }, "Send another inquiry \u2192")))));
@@ -3563,8 +3563,8 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
       n: "72h",
       l: "Sample TAT"
     }, {
-      n: "500m",
-      l: "Min order"
+      n: "Any m",
+      l: "Order size"
     }, {
       n: "14d",
       l: "Bulk TAT"
