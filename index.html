@@ -1,0 +1,4185 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jagannath Fabrics</title>
+<meta name="description" content="Jacquard and designer fabric manufacturer in Sachin, Surat, since 1998. Exporting worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Jagannath Fabrics — Design tokens */
+:root {
+  /* Color palette — heritage × modern luxury */
+  --cream: #EFE9DD;
+  --cream-50: #F7F3EA;
+  --cream-100: #EFE9DD;
+  --cream-200: #E4DCCB;
+  --cream-300: #D4C9B2;
+  --ink: #1A1410;
+  --ink-soft: #2B2420;
+  --ink-60: rgba(26, 20, 16, 0.6);
+  --ink-40: rgba(26, 20, 16, 0.4);
+  --ink-20: rgba(26, 20, 16, 0.2);
+  --ink-10: rgba(26, 20, 16, 0.1);
+  --ink-05: rgba(26, 20, 16, 0.05);
+  --bone: #FAF6ED;
+  --paper: #F3ECDE;
+
+  /* Brand deep tones */
+  --plum: #4A1C2E;       /* deep wine — secondary */
+  --terracotta: #A8663C; /* earth — tertiary */
+  --gold: #B8955F;       /* antique gold */
+
+  /* Accent — tweakable */
+  --accent: #B23A2E;     /* vermilion (default) */
+  --accent-soft: color-mix(in oklab, var(--accent) 14%, var(--cream-100));
+  --accent-ink: color-mix(in oklab, var(--accent) 80%, #000);
+
+  /* Typography */
+  --serif: "Fraunces", "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Spacing scale */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+
+  /* Radii */
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(26,20,16,0.06), 0 1px 1px rgba(26,20,16,0.04);
+  --shadow-md: 0 6px 20px -8px rgba(26,20,16,0.18), 0 2px 6px rgba(26,20,16,0.06);
+  --shadow-lg: 0 24px 60px -20px rgba(26,20,16,0.25);
+
+  /* Layout */
+  --container: 1360px;
+  --gutter: clamp(20px, 4vw, 56px);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream-100);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--accent); color: var(--bone); }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(48px, 7vw, 104px); line-height: 0.98; letter-spacing: -0.035em; }
+h2 { font-size: clamp(36px, 5vw, 72px); line-height: 1.02; letter-spacing: -0.03em; }
+h3 { font-size: clamp(24px, 2.6vw, 36px); line-height: 1.15; }
+h4 { font-size: clamp(18px, 1.5vw, 22px); line-height: 1.3; font-family: var(--sans); font-weight: 500; letter-spacing: 0; }
+
+p { margin: 0; text-wrap: pretty; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+}
+
+.mono {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  font-weight: 500;
+}
+
+.serif-italic { font-family: var(--serif); font-style: italic; font-weight: 300; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.divider {
+  height: 1px;
+  background: var(--ink-10);
+  width: 100%;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: all 0.25s cubic-bezier(.2,.7,.2,1);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--bone);
+}
+.btn-primary:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink-20);
+}
+.btn-ghost:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bone);
+}
+.btn-accent {
+  background: var(--accent);
+  color: var(--bone);
+}
+.btn-accent:hover {
+  background: var(--accent-ink);
+  transform: translateY(-1px);
+}
+
+.btn .arrow {
+  display: inline-block;
+  transition: transform 0.25s;
+}
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* Link underline */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0.3);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(.2,.7,.2,1);
+}
+.link-underline:hover::after { transform: scaleX(1); }
+
+/* Image placeholder */
+.fabric-placeholder {
+  position: relative;
+  background:
+    repeating-linear-gradient(45deg, rgba(26,20,16,0.05) 0 1px, transparent 1px 6px),
+    repeating-linear-gradient(-45deg, rgba(26,20,16,0.04) 0 1px, transparent 1px 6px),
+    linear-gradient(135deg, var(--cream-200), var(--cream-300));
+  overflow: hidden;
+  border-radius: var(--r-sm);
+}
+.fabric-placeholder .label {
+  position: absolute;
+  inset: auto auto 12px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  background: var(--cream-50);
+  padding: 4px 8px;
+  border-radius: 2px;
+  border: 1px solid var(--ink-10);
+}
+
+/* Jacquard SVG pattern (decorative) */
+.pattern-jacquard {
+  background-color: var(--cream-100);
+  background-image:
+    radial-gradient(circle at 20% 30%, color-mix(in oklab, var(--accent) 10%, transparent) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, color-mix(in oklab, var(--ink) 8%, transparent) 0, transparent 40%);
+}
+
+/* Scroll smooth */
+html { scroll-behavior: smooth; }
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Page transition */
+.page-enter {
+  animation: pageIn 0.5s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Scrollbar subtle */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--cream-100); }
+::-webkit-scrollbar-thumb { background: var(--ink-20); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-40); }
+
+:root { color-scheme: light; }
+html, body { background: var(--cream-100); color: var(--ink); overflow-x: hidden; }
+a[onclick], a:not([href]) { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+</head><body><div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script>
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+;
+(function () {
+  // Jacquard-inspired SVG patterns and motifs — drawn as simple repeatable geometry
+
+  const JacquardMotif = ({
+    size = 120,
+    color = "currentColor",
+    opacity = 0.6
+  }) => /*#__PURE__*/React.createElement("svg", {
+    width: size,
+    height: size,
+    viewBox: "0 0 120 120",
+    style: {
+      display: "block",
+      opacity
+    }
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("pattern", {
+    id: `weave-${size}`,
+    x: "0",
+    y: "0",
+    width: "12",
+    height: "12",
+    patternUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M0 6 L6 0 L12 6 L6 12 Z",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "0.4"
+  }))), /*#__PURE__*/React.createElement("circle", {
+    cx: "60",
+    cy: "60",
+    r: "54",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "0.6"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "60",
+    cy: "60",
+    r: "42",
+    fill: `url(#weave-${size})`,
+    stroke: color,
+    strokeWidth: "0.5"
+  }), Array.from({
+    length: 8
+  }).map((_, i) => {
+    const a = i * 45 * Math.PI / 180;
+    const cx = 60 + Math.cos(a) * 28;
+    const cy = 60 + Math.sin(a) * 28;
+    return /*#__PURE__*/React.createElement("ellipse", {
+      key: i,
+      cx: cx,
+      cy: cy,
+      rx: "8",
+      ry: "14",
+      transform: `rotate(${i * 45} ${cx} ${cy})`,
+      fill: "none",
+      stroke: color,
+      strokeWidth: "0.6"
+    });
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "60",
+    cy: "60",
+    r: "9",
+    fill: color,
+    opacity: "0.15"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "60",
+    cy: "60",
+    r: "4",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "0.6"
+  }));
+  const JacquardBorder = ({
+    color = "currentColor",
+    height = 32
+  }) => /*#__PURE__*/React.createElement("svg", {
+    width: "100%",
+    height: height,
+    viewBox: "0 0 400 32",
+    preserveAspectRatio: "none",
+    style: {
+      display: "block",
+      overflow: "visible"
+    }
+  }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("pattern", {
+    id: `border-${height}`,
+    x: "0",
+    y: "0",
+    width: "40",
+    height: "32",
+    patternUnits: "userSpaceOnUse"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M0 16 Q10 4 20 16 T40 16",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "0.8"
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "20",
+    cy: "16",
+    r: "1.6",
+    fill: color
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "0",
+    cy: "16",
+    r: "1",
+    fill: color
+  }), /*#__PURE__*/React.createElement("circle", {
+    cx: "40",
+    cy: "16",
+    r: "1",
+    fill: color
+  }))), /*#__PURE__*/React.createElement("rect", {
+    width: "100%",
+    height: "100%",
+    fill: `url(#border-${height})`
+  }));
+
+  // A fabric swatch drawn entirely in CSS/SVG — styled placeholder for a product card
+  const FabricSwatch = ({
+    baseColor = "#8B3A1F",
+    motifColor = "#E4DCCB",
+    motif = "paisley",
+    label
+  }) => {
+    const patternId = `fab-${Math.random().toString(36).slice(2, 8)}`;
+    const motifs = {
+      paisley: /*#__PURE__*/React.createElement("g", {
+        stroke: motifColor,
+        strokeWidth: "0.8",
+        fill: "none"
+      }, /*#__PURE__*/React.createElement("path", {
+        d: "M30 20 Q50 15 48 35 Q46 50 30 48 Q18 46 22 34 Q24 24 30 20 Z"
+      }), /*#__PURE__*/React.createElement("circle", {
+        cx: "34",
+        cy: "30",
+        r: "3",
+        fill: motifColor,
+        opacity: "0.5"
+      }), /*#__PURE__*/React.createElement("path", {
+        d: "M20 10 Q25 8 28 12"
+      })),
+      floral: /*#__PURE__*/React.createElement("g", {
+        stroke: motifColor,
+        strokeWidth: "0.8",
+        fill: "none"
+      }, Array.from({
+        length: 6
+      }).map((_, i) => {
+        const a = i * 60 * Math.PI / 180;
+        return /*#__PURE__*/React.createElement("ellipse", {
+          key: i,
+          cx: 30 + Math.cos(a) * 10,
+          cy: 30 + Math.sin(a) * 10,
+          rx: "4",
+          ry: "9",
+          transform: `rotate(${i * 60} ${30 + Math.cos(a) * 10} ${30 + Math.sin(a) * 10})`
+        });
+      }), /*#__PURE__*/React.createElement("circle", {
+        cx: "30",
+        cy: "30",
+        r: "3",
+        fill: motifColor
+      })),
+      geometric: /*#__PURE__*/React.createElement("g", {
+        stroke: motifColor,
+        strokeWidth: "0.7",
+        fill: "none"
+      }, /*#__PURE__*/React.createElement("rect", {
+        x: "15",
+        y: "15",
+        width: "30",
+        height: "30"
+      }), /*#__PURE__*/React.createElement("rect", {
+        x: "22",
+        y: "22",
+        width: "16",
+        height: "16",
+        transform: "rotate(45 30 30)"
+      }), /*#__PURE__*/React.createElement("circle", {
+        cx: "30",
+        cy: "30",
+        r: "4"
+      })),
+      damask: /*#__PURE__*/React.createElement("g", {
+        stroke: motifColor,
+        strokeWidth: "0.7",
+        fill: "none"
+      }, /*#__PURE__*/React.createElement("path", {
+        d: "M30 10 Q40 20 30 30 Q20 20 30 10 Z"
+      }), /*#__PURE__*/React.createElement("path", {
+        d: "M30 30 Q40 40 30 50 Q20 40 30 30 Z"
+      }), /*#__PURE__*/React.createElement("path", {
+        d: "M10 30 Q20 20 30 30 Q20 40 10 30 Z"
+      }), /*#__PURE__*/React.createElement("path", {
+        d: "M30 30 Q40 20 50 30 Q40 40 30 30 Z"
+      })),
+      diamond: /*#__PURE__*/React.createElement("g", {
+        stroke: motifColor,
+        strokeWidth: "0.6",
+        fill: "none"
+      }, /*#__PURE__*/React.createElement("path", {
+        d: "M30 8 L52 30 L30 52 L8 30 Z"
+      }), /*#__PURE__*/React.createElement("path", {
+        d: "M30 18 L42 30 L30 42 L18 30 Z"
+      }), /*#__PURE__*/React.createElement("circle", {
+        cx: "30",
+        cy: "30",
+        r: "3",
+        fill: motifColor,
+        opacity: "0.4"
+      })),
+      stripe: /*#__PURE__*/React.createElement("g", {
+        stroke: motifColor,
+        strokeWidth: "0.7",
+        fill: "none"
+      }, Array.from({
+        length: 8
+      }).map((_, i) => /*#__PURE__*/React.createElement("path", {
+        key: i,
+        d: `M0 ${i * 8 + 2} L60 ${i * 8 + 2}`,
+        opacity: i % 2 ? 0.5 : 1
+      })), Array.from({
+        length: 3
+      }).map((_, i) => /*#__PURE__*/React.createElement("circle", {
+        key: i,
+        cx: 15 + i * 15,
+        cy: "30",
+        r: "1.5",
+        fill: motifColor
+      })))
+    };
+    return /*#__PURE__*/React.createElement("svg", {
+      viewBox: "0 0 60 60",
+      preserveAspectRatio: "xMidYMid slice",
+      style: {
+        display: "block",
+        width: "100%",
+        height: "100%"
+      }
+    }, /*#__PURE__*/React.createElement("defs", null, /*#__PURE__*/React.createElement("pattern", {
+      id: patternId,
+      x: "0",
+      y: "0",
+      width: "60",
+      height: "60",
+      patternUnits: "userSpaceOnUse"
+    }, /*#__PURE__*/React.createElement("rect", {
+      width: "60",
+      height: "60",
+      fill: baseColor
+    }), motifs[motif] || motifs.floral, /*#__PURE__*/React.createElement("g", {
+      opacity: "0.25"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M0 0 L60 60",
+      stroke: motifColor,
+      strokeWidth: "0.2"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M60 0 L0 60",
+      stroke: motifColor,
+      strokeWidth: "0.2"
+    })))), /*#__PURE__*/React.createElement("rect", {
+      width: "100%",
+      height: "100%",
+      fill: `url(#${patternId})`
+    }));
+  };
+
+  // Monogram / wordmark
+  const Monogram = ({
+    size = 40,
+    color = "currentColor"
+  }) => /*#__PURE__*/React.createElement("svg", {
+    width: size,
+    height: size,
+    viewBox: "0 0 40 40",
+    style: {
+      display: "block"
+    }
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "20",
+    cy: "20",
+    r: "18.5",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "1"
+  }), /*#__PURE__*/React.createElement("text", {
+    x: "20",
+    y: "26",
+    textAnchor: "middle",
+    fontFamily: "Fraunces, serif",
+    fontSize: "20",
+    fontWeight: "400",
+    fill: color,
+    fontStyle: "italic"
+  }, "J"), /*#__PURE__*/React.createElement("circle", {
+    cx: "20",
+    cy: "20",
+    r: "16",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "0.4",
+    strokeDasharray: "1 2"
+  }));
+  Object.assign(window, {
+    JacquardMotif,
+    JacquardBorder,
+    FabricSwatch,
+    Monogram
+  });
+})();
+;
+(function () {
+  // Product catalog & company data for Jagannath Fabrics
+
+  const COMPANY = {
+    name: "Jagannath Fabrics",
+    tagline: "Weaving Heritage, Engineering Excellence",
+    established: 1998,
+    founder: "Himmatbhai Gondaliya",
+    addressLine1: "D2/15, Road No. 4",
+    addressLine2: "Hojiwala Industrial Estate, Sachin",
+    addressLine3: "Surat — 394230, Gujarat, India",
+    location: "Sachin, Hojiwala Industrial Estate, Surat, Gujarat",
+    phone: "+91 99786 33155",
+    email: "jagannathfabrics@gmail.com",
+    shortAbout: "A textile house rooted in Surat — the silk city — manufacturing jacquard and designer fabrics on rapier looms since 1998. In-house production with an extended network of trusted partner mills."
+  };
+  const STATS = [{
+    n: "27+",
+    l: "Years in weaving"
+  }, {
+    n: "120+",
+    l: "Looms in network"
+  }, {
+    n: "40L+",
+    l: "Meters / month"
+  }, {
+    n: "2688",
+    l: "Max jacquard hooks"
+  }];
+  const COLLECTIONS = [{
+    id: "JQ-0412",
+    name: "Banarasi Floret",
+    type: "Jacquard",
+    use: "Saree & Dress",
+    color: "Wine",
+    hex: "#4A1C2E",
+    motifColor: "#D4C9B2",
+    motif: "floral",
+    gsm: 120,
+    width: '44"',
+    yarn: "Viscose × Zari",
+    price: "₹ 480 / m"
+  }, {
+    id: "JQ-0418",
+    name: "Mughal Paisley",
+    type: "Jacquard",
+    use: "Dress Material",
+    color: "Terracotta",
+    hex: "#A8663C",
+    motifColor: "#F3ECDE",
+    motif: "paisley",
+    gsm: 135,
+    width: '48"',
+    yarn: "Polyester × Viscose",
+    price: "₹ 340 / m"
+  }, {
+    id: "BC-0207",
+    name: "Royal Brocade",
+    type: "Brocade",
+    use: "Bridal & Lehenga",
+    color: "Deep Plum",
+    hex: "#3A1528",
+    motifColor: "#B8955F",
+    motif: "damask",
+    gsm: 180,
+    width: '44"',
+    yarn: "Silk × Zari",
+    price: "₹ 720 / m"
+  }, {
+    id: "DM-0115",
+    name: "Heritage Damask",
+    type: "Damask",
+    use: "Upholstery",
+    color: "Olive",
+    hex: "#3E4A2C",
+    motifColor: "#E4DCCB",
+    motif: "damask",
+    gsm: 220,
+    width: '54"',
+    yarn: "Cotton × Poly",
+    price: "₹ 290 / m"
+  }, {
+    id: "JQ-0433",
+    name: "Teal Geometry",
+    type: "Jacquard",
+    use: "Home Furnishing",
+    color: "Teal",
+    hex: "#1F3E3E",
+    motifColor: "#C9A86A",
+    motif: "geometric",
+    gsm: 160,
+    width: '58"',
+    yarn: "Cotton × Viscose",
+    price: "₹ 410 / m"
+  }, {
+    id: "SJ-0309",
+    name: "Ivory Lustre",
+    type: "Satin Jacquard",
+    use: "Bridal & Gown",
+    color: "Ivory",
+    hex: "#E8DCC0",
+    motifColor: "#8B6F3A",
+    motif: "floral",
+    gsm: 110,
+    width: '44"',
+    yarn: "Polyester × Lurex",
+    price: "₹ 380 / m"
+  }, {
+    id: "JQ-0441",
+    name: "Midnight Bloom",
+    type: "Jacquard",
+    use: "Dress Material",
+    color: "Indigo",
+    hex: "#1C2440",
+    motifColor: "#B8955F",
+    motif: "floral",
+    gsm: 130,
+    width: '48"',
+    yarn: "Viscose × Metallic",
+    price: "₹ 360 / m"
+  }, {
+    id: "DM-0128",
+    name: "Ochre Diamond",
+    type: "Damask",
+    use: "Upholstery",
+    color: "Ochre",
+    hex: "#8B6F3A",
+    motifColor: "#2B2420",
+    motif: "diamond",
+    gsm: 240,
+    width: '54"',
+    yarn: "Cotton × Chenille",
+    price: "₹ 310 / m"
+  }, {
+    id: "JQ-0455",
+    name: "Forest Tapestry",
+    type: "Jacquard",
+    use: "Home Furnishing",
+    color: "Forest",
+    hex: "#2A3A24",
+    motifColor: "#D4C9B2",
+    motif: "damask",
+    gsm: 170,
+    width: '58"',
+    yarn: "Cotton × Poly",
+    price: "₹ 395 / m"
+  }, {
+    id: "BC-0219",
+    name: "Sindoor Brocade",
+    type: "Brocade",
+    use: "Saree & Dress",
+    color: "Vermilion",
+    hex: "#B23A2E",
+    motifColor: "#E8DCC0",
+    motif: "paisley",
+    gsm: 155,
+    width: '44"',
+    yarn: "Silk × Zari",
+    price: "₹ 640 / m"
+  }, {
+    id: "SJ-0314",
+    name: "Champagne Stripe",
+    type: "Satin Jacquard",
+    use: "Bridal & Gown",
+    color: "Champagne",
+    hex: "#C5A878",
+    motifColor: "#4A3820",
+    motif: "stripe",
+    gsm: 115,
+    width: '44"',
+    yarn: "Polyester × Lurex",
+    price: "₹ 370 / m"
+  }, {
+    id: "JQ-0468",
+    name: "Charcoal Weave",
+    type: "Jacquard",
+    use: "Home Furnishing",
+    color: "Charcoal",
+    hex: "#242020",
+    motifColor: "#A8663C",
+    motif: "geometric",
+    gsm: 165,
+    width: '58"',
+    yarn: "Cotton × Viscose",
+    price: "₹ 420 / m"
+  }];
+  const FILTERS = {
+    type: ["All", "Jacquard", "Brocade", "Damask", "Satin Jacquard"],
+    use: ["All", "Saree & Dress", "Dress Material", "Bridal & Lehenga", "Bridal & Gown", "Upholstery", "Home Furnishing"],
+    color: ["All", "Wine", "Terracotta", "Plum", "Olive", "Teal", "Ivory", "Indigo", "Ochre", "Forest", "Vermilion", "Champagne", "Charcoal"]
+  };
+  const PROCESS_STEPS = [{
+    n: "01",
+    title: "Design & Drafting",
+    body: "CAD artwork, motif development and weave simulation. Every pattern is charted on 1200+ needle jacquard heads before it reaches the loom."
+  }, {
+    n: "02",
+    title: "Yarn Sourcing",
+    body: "Viscose, polyester, silk and metallic zari sourced from certified mills. Batches tested for tensile strength and dye consistency."
+  }, {
+    n: "03",
+    title: "Warping & Sizing",
+    body: "Precision warping on sectional beams. Sizing applied to withstand rapier pick insertion at 400–550 picks/min."
+  }, {
+    n: "04",
+    title: "Rapier Weaving",
+    body: "120+ rapier looms — in-house and partner network — running jacquard heads up to 2688 hooks. Run-time monitored in real time."
+  }, {
+    n: "05",
+    title: "Finishing & Quality",
+    body: "Heat setting, calendering and AQL-2.5 inspection. Every roll carries a QR-coded batch card with origin loom and operator."
+  }, {
+    n: "06",
+    title: "Packing & Dispatch",
+    body: "Moisture-proof rolls, 4-ply cartons, batch-wise invoicing and paperwork. Dispatch from Sachin to buyers across India, or export-packed for sea and air freight worldwide."
+  }];
+  const SUSTAINABILITY = [{
+    stat: "Solar",
+    label: "Rooftop capacity",
+    body: "Rooftop solar across the manufacturing unit offsets a meaningful share of grid consumption."
+  }, {
+    stat: "Azo-free",
+    label: "Dye choices",
+    body: "We insist on low-impact, azo-free dyestuffs across our regular shade cards."
+  }, {
+    stat: "+9,200",
+    label: "Trees planted",
+    body: "A community programme with local schools since 2019 — one sapling for every new loom added."
+  }];
+  const TIMELINE = [{
+    year: "1998",
+    title: "Founded in Surat",
+    body: "Himmatbhai Gondaliya starts Jagannath Fabrics as a small rapier loom unit in Sachin, weaving jacquard sarees and dress material for the Surat trade."
+  }, {
+    year: "2005",
+    title: "Dedicated design studio",
+    body: "In-house CAD design team formed to develop original jacquard motifs — paisley, floral and damask libraries still in use today."
+  }, {
+    year: "2011",
+    title: "Electronic jacquard upgrade",
+    body: "Transitioned fully to electronic jacquard heads — 1200 to 2688 hooks — enabling far finer motifs and quicker design changeovers."
+  }, {
+    year: "2017",
+    title: "Partner mill network",
+    body: "Formalised a trusted network of partner mills in and around Surat, extending monthly capacity without compromising our shade cards."
+  }, {
+    year: "2021",
+    title: "Sustainability push",
+    body: "Rooftop solar comes online at the Sachin unit, reducing grid dependence, and azo-free dye standards are adopted across regular shade cards."
+  }, {
+    year: "2026",
+    title: "27 years on the loom",
+    body: "A combined capacity of roughly 40 lakh meters per month, serving fabric buyers across India and importers overseas."
+  }];
+  Object.assign(window, {
+    COMPANY,
+    STATS,
+    COLLECTIONS,
+    FILTERS,
+    PROCESS_STEPS,
+    SUSTAINABILITY,
+    TIMELINE
+  });
+})();
+;
+(function () {
+  // Shared chrome: top nav, footer, marquee
+
+  const Nav = ({
+    route,
+    setRoute,
+    accent,
+    setAccent
+  }) => {
+    const items = [{
+      id: "home",
+      label: "Home"
+    }, {
+      id: "about",
+      label: "About"
+    }, {
+      id: "collection",
+      label: "Collection"
+    }, {
+      id: "process",
+      label: "Process"
+    }, {
+      id: "sustainability",
+      label: "Sustainability"
+    }];
+    const [scrolled, setScrolled] = React.useState(false);
+    React.useEffect(() => {
+      const onScroll = () => setScrolled(window.scrollY > 8);
+      window.addEventListener("scroll", onScroll);
+      return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+    return /*#__PURE__*/React.createElement("header", {
+      style: {
+        position: "sticky",
+        top: 0,
+        zIndex: 40,
+        background: scrolled ? "rgba(247,243,234,0.88)" : "transparent",
+        backdropFilter: scrolled ? "blur(14px)" : "none",
+        borderBottom: scrolled ? "1px solid var(--ink-10)" : "1px solid transparent",
+        transition: "all 0.3s ease"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container",
+      style: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "18px 0"
+      }
+    }, /*#__PURE__*/React.createElement("a", {
+      onClick: () => setRoute("home"),
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12,
+        cursor: "pointer"
+      }
+    }, /*#__PURE__*/React.createElement(Monogram, {
+      size: 34,
+      color: "var(--ink)"
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        lineHeight: 1
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 20,
+        letterSpacing: "-0.02em"
+      }
+    }, "Jagannath Fabrics"), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 9,
+        marginTop: 3
+      }
+    }, "Surat \xB7 Est. 1998 \xB7 Ships worldwide"))), /*#__PURE__*/React.createElement("nav", {
+      style: {
+        display: "flex",
+        gap: 28,
+        alignItems: "center"
+      },
+      className: "desktop-nav"
+    }, items.map(it => /*#__PURE__*/React.createElement("a", {
+      key: it.id,
+      onClick: () => setRoute(it.id),
+      className: "link-underline",
+      style: {
+        fontSize: 13,
+        cursor: "pointer",
+        fontWeight: 500,
+        color: route === it.id ? "var(--accent)" : "var(--ink)"
+      }
+    }, it.label))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => setRoute("contact"),
+      className: "btn btn-primary"
+    }, "Inquiry / Order ", /*#__PURE__*/React.createElement("span", {
+      className: "arrow"
+    }, "\u2192")))), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 900px) {
+          .desktop-nav { display: none !important; }
+        }
+      `));
+  };
+  const Marquee = ({
+    items,
+    accent
+  }) => /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: "var(--ink)",
+      color: "var(--bone)",
+      padding: "18px 0",
+      overflow: "hidden",
+      borderTop: "1px solid var(--ink)",
+      borderBottom: "1px solid var(--ink)"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 56,
+      whiteSpace: "nowrap",
+      animation: "marquee 38s linear infinite",
+      fontFamily: "var(--serif)",
+      fontSize: 22,
+      fontStyle: "italic",
+      fontWeight: 300
+    }
+  }, [...items, ...items, ...items].map((t, i) => /*#__PURE__*/React.createElement("span", {
+    key: i,
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 56
+    }
+  }, t, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: accent,
+      fontStyle: "normal"
+    }
+  }, "\u2726")))));
+  const Footer = ({
+    setRoute
+  }) => {
+    const col = {
+      display: "flex",
+      flexDirection: "column",
+      gap: 10
+    };
+    const head = {
+      fontSize: 11,
+      letterSpacing: "0.14em",
+      textTransform: "uppercase",
+      color: "rgba(250,246,237,0.5)",
+      fontFamily: "var(--mono)",
+      marginBottom: 8
+    };
+    const link = {
+      fontSize: 14,
+      color: "var(--bone)",
+      cursor: "pointer",
+      opacity: 0.85
+    };
+    return /*#__PURE__*/React.createElement("footer", {
+      style: {
+        background: "var(--ink)",
+        color: "var(--bone)",
+        paddingTop: 80
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "2fr 1fr 1fr 1.2fr",
+        gap: 56,
+        paddingBottom: 64
+      },
+      className: "footer-grid"
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 14,
+        marginBottom: 24
+      }
+    }, /*#__PURE__*/React.createElement(Monogram, {
+      size: 44,
+      color: "var(--bone)"
+    }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 28,
+        letterSpacing: "-0.02em"
+      }
+    }, "Jagannath Fabrics"), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        opacity: 0.5,
+        marginTop: 4
+      }
+    }, "Weaving Heritage \xB7 Engineering Excellence"))), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 15,
+        opacity: 0.7,
+        maxWidth: 420,
+        lineHeight: 1.6
+      }
+    }, "Jacquard and designer fabric manufacturer based in Sachin, Surat \u2014 weaving on rapier looms since 1998 for fabric buyers and wholesalers across India, and importers worldwide."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 32,
+        display: "flex",
+        gap: 12
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => setRoute("contact"),
+      className: "btn btn-accent"
+    }, "Send an inquiry \u2192"))), /*#__PURE__*/React.createElement("div", {
+      style: col
+    }, /*#__PURE__*/React.createElement("div", {
+      style: head
+    }, "Explore"), /*#__PURE__*/React.createElement("a", {
+      style: link,
+      onClick: () => setRoute("home")
+    }, "Home"), /*#__PURE__*/React.createElement("a", {
+      style: link,
+      onClick: () => setRoute("about")
+    }, "About"), /*#__PURE__*/React.createElement("a", {
+      style: link,
+      onClick: () => setRoute("collection")
+    }, "Collection"), /*#__PURE__*/React.createElement("a", {
+      style: link,
+      onClick: () => setRoute("process")
+    }, "Process"), /*#__PURE__*/React.createElement("a", {
+      style: link,
+      onClick: () => setRoute("sustainability")
+    }, "Sustainability"), /*#__PURE__*/React.createElement("a", {
+      style: link,
+      onClick: () => setRoute("contact")
+    }, "Contact")), /*#__PURE__*/React.createElement("div", {
+      style: col
+    }, /*#__PURE__*/React.createElement("div", {
+      style: head
+    }, "Products"), /*#__PURE__*/React.createElement("a", {
+      style: link
+    }, "Jacquard"), /*#__PURE__*/React.createElement("a", {
+      style: link
+    }, "Brocade"), /*#__PURE__*/React.createElement("a", {
+      style: link
+    }, "Damask"), /*#__PURE__*/React.createElement("a", {
+      style: link
+    }, "Satin Jacquard"), /*#__PURE__*/React.createElement("a", {
+      style: link
+    }, "Dress Material"), /*#__PURE__*/React.createElement("a", {
+      style: link
+    }, "Upholstery")), /*#__PURE__*/React.createElement("div", {
+      style: col
+    }, /*#__PURE__*/React.createElement("div", {
+      style: head
+    }, "Visit / Reach us"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        ...link,
+        opacity: 1,
+        lineHeight: 1.6
+      }
+    }, "D2/15, Road No. 4,", /*#__PURE__*/React.createElement("br", null), "Hojiwala Industrial Estate,", /*#__PURE__*/React.createElement("br", null), "Sachin, Surat \u2014 394230", /*#__PURE__*/React.createElement("br", null), "Gujarat, India"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        ...link,
+        marginTop: 14
+      }
+    }, COMPANY.phone, " (WhatsApp)"), /*#__PURE__*/React.createElement("div", {
+      style: link
+    }, COMPANY.email))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        borderTop: "1px solid rgba(250,246,237,0.12)",
+        padding: "26px 0",
+        display: "flex",
+        justifyContent: "space-between",
+        fontSize: 12,
+        opacity: 0.5,
+        fontFamily: "var(--mono)",
+        letterSpacing: "0.1em",
+        textTransform: "uppercase"
+      }
+    }, /*#__PURE__*/React.createElement("div", null, "\xA9 2026 Jagannath Fabrics \xB7 All rights reserved"), /*#__PURE__*/React.createElement("div", null, "Woven in Surat \xB7 Shipped worldwide"))), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 900px) {
+          .footer-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          .footer-grid { grid-template-columns: 1fr !important; }
+        }
+      `));
+  };
+  Object.assign(window, {
+    Nav,
+    Footer,
+    Marquee
+  });
+})();
+;
+(function () {
+  // Home page — Jagannath Fabrics
+
+  const HomePage = ({
+    setRoute
+  }) => {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "page-enter"
+    }, /*#__PURE__*/React.createElement("section", {
+      style: {
+        position: "relative",
+        paddingTop: 40,
+        paddingBottom: 80
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container",
+      style: {
+        position: "relative"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        right: 40,
+        top: -10,
+        opacity: 0.18,
+        pointerEvents: "none"
+      }
+    }, /*#__PURE__*/React.createElement(JacquardMotif, {
+      size: 220,
+      color: "var(--ink)",
+      opacity: 1
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1.25fr 1fr",
+        gap: 56,
+        alignItems: "end",
+        paddingTop: 60
+      },
+      className: "hero-grid"
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 32,
+        display: "flex",
+        alignItems: "center",
+        gap: 12
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 28,
+        height: 1,
+        background: "var(--accent)"
+      }
+    }), "Jacquard \xB7 Brocade \xB7 Damask \xB7 Since 1998 \xB7 Exporting worldwide"), /*#__PURE__*/React.createElement("h1", {
+      style: {
+        marginBottom: 32
+      }
+    }, "Fabric woven", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "with intention"), ",", /*#__PURE__*/React.createElement("br", null), "engineered", /*#__PURE__*/React.createElement("br", null), "at scale."), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 19,
+        color: "var(--ink-60)",
+        maxWidth: 560,
+        lineHeight: 1.55,
+        marginBottom: 40
+      }
+    }, "From a small unit in Sachin to a 120-loom network across Surat \u2014 we manufacture jacquard and designer fabrics for buyers, wholesalers and importers in India and around the world, for the bridal, dress, saree and upholstery trade."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 12,
+        flexWrap: "wrap"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => setRoute("collection"),
+      className: "btn btn-primary"
+    }, "Browse collection ", /*#__PURE__*/React.createElement("span", {
+      className: "arrow"
+    }, "\u2192")), /*#__PURE__*/React.createElement("button", {
+      onClick: () => setRoute("contact"),
+      className: "btn btn-ghost"
+    }, "Request sample card"), /*#__PURE__*/React.createElement("button", {
+      onClick: () => {
+        const el = document.getElementById("export");
+        if (el) el.scrollIntoView({
+          behavior: "smooth"
+        });
+      },
+      className: "btn btn-ghost"
+    }, "Ordering from abroad?"))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridTemplateRows: "160px 160px 160px",
+        gap: 12
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        gridColumn: "1 / 2",
+        gridRow: "1 / 3",
+        borderRadius: 6,
+        overflow: "hidden",
+        boxShadow: "var(--shadow-md)"
+      }
+    }, /*#__PURE__*/React.createElement(FabricSwatch, {
+      baseColor: "#4A1C2E",
+      motifColor: "#D4C9B2",
+      motif: "floral"
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        borderRadius: 6,
+        overflow: "hidden",
+        boxShadow: "var(--shadow-md)"
+      }
+    }, /*#__PURE__*/React.createElement(FabricSwatch, {
+      baseColor: "#A8663C",
+      motifColor: "#F3ECDE",
+      motif: "paisley"
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        borderRadius: 6,
+        overflow: "hidden",
+        boxShadow: "var(--shadow-md)"
+      }
+    }, /*#__PURE__*/React.createElement(FabricSwatch, {
+      baseColor: "#1F3E3E",
+      motifColor: "#C9A86A",
+      motif: "geometric"
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        gridColumn: "1 / 3",
+        borderRadius: 6,
+        overflow: "hidden",
+        boxShadow: "var(--shadow-md)"
+      }
+    }, /*#__PURE__*/React.createElement(FabricSwatch, {
+      baseColor: "#E8DCC0",
+      motifColor: "#8B6F3A",
+      motif: "damask"
+    })))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 96,
+        padding: "32px 0",
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gap: 32,
+        borderTop: "1px solid var(--ink-10)",
+        borderBottom: "1px solid var(--ink-10)"
+      },
+      className: "stats-grid"
+    }, STATS.map((s, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        position: "relative",
+        paddingLeft: i === 0 ? 0 : 24,
+        borderLeft: i === 0 ? "none" : "1px solid var(--ink-10)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 48,
+        lineHeight: 1,
+        letterSpacing: "-0.03em"
+      }
+    }, s.n), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        marginTop: 10
+      }
+    }, s.l)))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "80px 0",
+        background: "var(--cream-50)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "end",
+        marginBottom: 56,
+        gap: 24
+      },
+      className: "section-head"
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 16
+      }
+    }, "\u2014 01 / What we weave"), /*#__PURE__*/React.createElement("h2", null, "A catalogue", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic"
+    }, "built across six lines."))), /*#__PURE__*/React.createElement("p", {
+      style: {
+        maxWidth: 340,
+        color: "var(--ink-60)",
+        fontSize: 15
+      }
+    }, "Every fabric begins with a design brief. We weave jacquards, brocades, damasks and satin jacquards \u2014 and anything else a rapier loom can run.")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 1fr)",
+        gap: 20
+      },
+      className: "cat-grid"
+    }, [{
+      t: "Jacquard",
+      s: "Signature line",
+      m: "floral",
+      c: "#4A1C2E",
+      mc: "#D4C9B2"
+    }, {
+      t: "Brocade",
+      s: "Bridal & lehenga",
+      m: "paisley",
+      c: "#B23A2E",
+      mc: "#E8DCC0"
+    }, {
+      t: "Damask",
+      s: "Upholstery grade",
+      m: "damask",
+      c: "#3E4A2C",
+      mc: "#E4DCCB"
+    }, {
+      t: "Satin Jacquard",
+      s: "Gown & drape",
+      m: "floral",
+      c: "#E8DCC0",
+      mc: "#8B6F3A"
+    }, {
+      t: "Dress Material",
+      s: "44\" suiting",
+      m: "diamond",
+      c: "#1C2440",
+      mc: "#B8955F"
+    }, {
+      t: "Upholstery",
+      s: "54–58\" furnishing",
+      m: "geometric",
+      c: "#8B6F3A",
+      mc: "#2B2420"
+    }].map((cat, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      onClick: () => setRoute("collection"),
+      style: {
+        background: "var(--bone)",
+        borderRadius: 8,
+        overflow: "hidden",
+        border: "1px solid var(--ink-10)",
+        cursor: "pointer",
+        transition: "all 0.3s ease"
+      },
+      onMouseEnter: e => {
+        e.currentTarget.style.transform = "translateY(-4px)";
+        e.currentTarget.style.boxShadow = "var(--shadow-lg)";
+      },
+      onMouseLeave: e => {
+        e.currentTarget.style.transform = "translateY(0)";
+        e.currentTarget.style.boxShadow = "none";
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: 260,
+        position: "relative"
+      }
+    }, /*#__PURE__*/React.createElement(FabricSwatch, {
+      baseColor: cat.c,
+      motifColor: cat.mc,
+      motif: cat.m
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: "22px 24px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "end"
+      }
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 24,
+        letterSpacing: "-0.02em"
+      }
+    }, cat.t), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        marginTop: 6
+      }
+    }, cat.s)), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 22,
+        fontStyle: "italic"
+      }
+    }, "\u2192"))))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "120px 0",
+        position: "relative"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1.3fr",
+        gap: 80,
+        alignItems: "start"
+      },
+      className: "manifesto-grid"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "sticky",
+        top: 120
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 20
+      }
+    }, "\u2014 02 / Our craft"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 18,
+        fontStyle: "italic",
+        color: "var(--ink-60)",
+        lineHeight: 1.55
+      }
+    }, "\"Surat has woven for four centuries. We weave for the next one.\""), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 32,
+        paddingTop: 32,
+        borderTop: "1px solid var(--ink-10)"
+      }
+    }, /*#__PURE__*/React.createElement(JacquardBorder, {
+      color: "var(--accent)",
+      height: 24
+    }))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
+      style: {
+        marginBottom: 40
+      }
+    }, "A weaver's eye.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "An engineer's hand.")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: 40,
+        columnGap: 56
+      },
+      className: "manifesto-points"
+    }, [{
+      n: "In-house design studio",
+      b: "CAD artwork and motif libraries built over 27 years. Samples back in 72 hours."
+    }, {
+      n: "Rapier loom fleet",
+      b: "120+ looms — in-house and across trusted partner mills in Surat — running at 400 to 550 picks per minute."
+    }, {
+      n: "Up to 2688 hooks",
+      b: "Electronic jacquard heads that render the finest paisleys, florals and heritage geometry."
+    }, {
+      n: "Export ready",
+      b: "We supply fabric buyers in India and importers overseas, with export packing and full shipping paperwork."
+    }].map((p, i) => /*#__PURE__*/React.createElement("div", {
+      key: i
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: 28,
+        height: 1,
+        background: "var(--accent)",
+        marginBottom: 16
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 22,
+        marginBottom: 10,
+        letterSpacing: "-0.01em"
+      }
+    }, p.n), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 14,
+        lineHeight: 1.6
+      }
+    }, p.b)))), /*#__PURE__*/React.createElement("button", {
+      onClick: () => setRoute("about"),
+      className: "btn btn-ghost",
+      style: {
+        marginTop: 48
+      }
+    }, "Read our story ", /*#__PURE__*/React.createElement("span", {
+      className: "arrow"
+    }, "\u2192")))))), /*#__PURE__*/React.createElement(Marquee, {
+      items: ["Bridal Jacquard", "Dress Material", "Rapier Loom Weaving", "Upholstery Damask", "Designer Fabric", "Since 1998", "Made in Surat", "Shipped worldwide"],
+      accent: "var(--accent)"
+    }), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "120px 0",
+        background: "var(--paper)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1.3fr",
+        gap: 80,
+        alignItems: "start"
+      },
+      className: "manifesto-grid"
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 20
+      }
+    }, "\u2014 03 / Who we serve"), /*#__PURE__*/React.createElement("h2", null, "We weave. ", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "You trade."))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 17,
+        color: "var(--ink-60)",
+        lineHeight: 1.65,
+        marginBottom: 32
+      }
+    }, "Jagannath Fabrics is a manufacturer, not a brand. We sell lot-by-lot to fabric buyers, wholesalers and merchants across India, and to importers and brands overseas. If you source jacquard by the thousand-meter, you're our kind of buyer."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: 16
+      },
+      className: "serve-grid"
+    }, [{
+      t: "Overseas importers",
+      b: "Importers and wholesalers abroad, quoted FOB or CIF to your nearest port."
+    }, {
+      t: "Buyers across India",
+      b: "Fabric buyers and wholesalers in Surat, Mumbai, Delhi, Bengaluru and regional markets."
+    }, {
+      t: "Agents & distributors",
+      b: "Lot-matching across running designs and shade cards."
+    }, {
+      t: "Private-label orders",
+      b: "Custom motifs on request — minimums apply."
+    }].map((x, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        padding: "20px 0",
+        borderTop: "1px solid var(--ink-20)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 20,
+        letterSpacing: "-0.01em"
+      }
+    }, x.t), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 13,
+        lineHeight: 1.55,
+        marginTop: 8
+      }
+    }, x.b)))))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "120px 0"
+      },
+      id: "export"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "end",
+        marginBottom: 56,
+        gap: 24
+      },
+      className: "section-head"
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 16
+      }
+    }, "\u2014 04 / Export desk"), /*#__PURE__*/React.createElement("h2", null, "Buying from", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "outside India?"))), /*#__PURE__*/React.createElement("p", {
+      style: {
+        maxWidth: 380,
+        color: "var(--ink-60)",
+        fontSize: 15
+      }
+    }, "We take orders from importers, wholesalers and brands abroad. Send an inquiry from any country and we reply with swatches, a proforma invoice and shipping options.")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gap: 20
+      },
+      className: "export-grid"
+    }, [{
+      t: "Quotes in your currency",
+      b: "Prices in USD, EUR, GBP, AED or INR, on FOB, CFR or CIF terms."
+    }, {
+      t: "Secure payment",
+      b: "Telegraphic transfer (TT) or a letter of credit (LC) opened through your bank."
+    }, {
+      t: "Sea and air freight",
+      b: "FCL or LCL by sea from Nhava Sheva or Mundra. Swatches by international courier."
+    }, {
+      t: "Export paperwork",
+      b: "Commercial invoice, packing list, certificate of origin and bill of lading with every shipment."
+    }].map((x, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        padding: 28,
+        background: "var(--bone)",
+        border: "1px solid var(--ink-10)",
+        borderRadius: 8
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 22,
+        letterSpacing: "-0.01em",
+        marginBottom: 12
+      }
+    }, x.t), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 14,
+        lineHeight: 1.6
+      }
+    }, x.b)))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 64
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        marginBottom: 24
+      }
+    }, "How an export order works"), /*#__PURE__*/React.createElement("ol", {
+      style: {
+        listStyle: "none",
+        padding: 0,
+        margin: 0,
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gap: 32
+      },
+      className: "export-steps"
+    }, [{
+      n: "1",
+      t: "Send your inquiry",
+      b: "Fabric, quantity, destination country and port."
+    }, {
+      n: "2",
+      t: "Approve swatches",
+      b: "Couriered to your door, usually within a week."
+    }, {
+      n: "3",
+      t: "Confirm the proforma",
+      b: "Price, Incoterm, payment terms and ship date in writing."
+    }, {
+      n: "4",
+      t: "We weave and ship",
+      b: "Bulk in 14–21 days, inspected and export-packed."
+    }].map(s => /*#__PURE__*/React.createElement("li", {
+      key: s.n,
+      style: {
+        paddingTop: 20,
+        borderTop: "1px solid var(--ink-20)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 36,
+        color: "var(--accent)",
+        lineHeight: 1,
+        marginBottom: 14
+      }
+    }, s.n), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontWeight: 600,
+        fontSize: 15,
+        marginBottom: 6
+      }
+    }, s.t), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 14,
+        lineHeight: 1.55
+      }
+    }, s.b))))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 56,
+        display: "flex",
+        gap: 12,
+        flexWrap: "wrap"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => setRoute("contact"),
+      className: "btn btn-primary"
+    }, "Send an export inquiry ", /*#__PURE__*/React.createElement("span", {
+      className: "arrow"
+    }, "\u2192")), /*#__PURE__*/React.createElement("a", {
+      href: "https://wa.me/919978633155",
+      target: "_blank",
+      rel: "noopener",
+      className: "btn btn-ghost",
+      style: {
+        textDecoration: "none"
+      }
+    }, "WhatsApp +91 99786 33155")))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "80px 0 120px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: "var(--ink)",
+        color: "var(--bone)",
+        padding: "96px 72px",
+        borderRadius: 12,
+        position: "relative",
+        overflow: "hidden"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        right: -60,
+        top: -60,
+        opacity: 0.12
+      }
+    }, /*#__PURE__*/React.createElement(JacquardMotif, {
+      size: 360,
+      color: "var(--bone)",
+      opacity: 1
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "relative",
+        display: "grid",
+        gridTemplateColumns: "1.4fr 1fr",
+        gap: 60,
+        alignItems: "end"
+      },
+      className: "cta-grid"
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        color: "rgba(250,246,237,0.5)",
+        marginBottom: 24
+      }
+    }, "\u2014 Start a project"), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        color: "var(--bone)"
+      }
+    }, "Bring your design.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "We'll bring the loom."))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 16,
+        opacity: 0.75,
+        marginBottom: 28
+      }
+    }, "Send us your tech pack, sketch or a fabric reference from anywhere in the world. Our design studio responds within one working day with sampling options."), /*#__PURE__*/React.createElement("button", {
+      onClick: () => setRoute("contact"),
+      className: "btn btn-accent"
+    }, "Start your inquiry ", /*#__PURE__*/React.createElement("span", {
+      className: "arrow"
+    }, "\u2192"))))))), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 1000px) {
+          .hero-grid, .manifesto-grid, .cta-grid { grid-template-columns: 1fr !important; }
+          .cat-grid { grid-template-columns: 1fr 1fr !important; }
+          .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
+          .serve-grid { grid-template-columns: 1fr !important; }
+          .export-grid, .export-steps { grid-template-columns: 1fr 1fr !important; }
+          .manifesto-points { grid-template-columns: 1fr !important; }
+          .section-head { flex-direction: column; align-items: flex-start !important; }
+        }
+        @media (max-width: 640px) {
+          .cat-grid { grid-template-columns: 1fr !important; }
+          .export-grid, .export-steps { grid-template-columns: 1fr !important; }
+        }
+      `));
+  };
+  Object.assign(window, {
+    HomePage
+  });
+})();
+;
+(function () {
+  // About page
+
+  const AboutPage = ({
+    setRoute
+  }) => {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "page-enter"
+    }, /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "80px 0 60px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 32
+      }
+    }, "\u2014 Our story"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1.5fr 1fr",
+        gap: 64,
+        alignItems: "end"
+      },
+      className: "ab-hero"
+    }, /*#__PURE__*/React.createElement("h1", null, "27 years of weaving \u2014", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "and we're only"), /*#__PURE__*/React.createElement("br", null), "getting started."), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 17,
+        color: "var(--ink-60)",
+        lineHeight: 1.65
+      }
+    }, "Jagannath Fabrics began in 1998 in Sachin, Surat \u2014 a small rapier loom unit started by Himmatbhai Gondaliya with a simple belief: weave an honest meter. Today we manufacture across a 120-loom network, still from Sachin, still run by the same family.")))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "40px 0"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "2fr 1fr 1fr",
+        gridTemplateRows: "320px",
+        gap: 12
+      },
+      className: "ab-strip"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "fabric-placeholder",
+      style: {
+        gridRow: "1 / 2"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "label"
+    }, "The Sachin unit \xB7 est. 1998")), /*#__PURE__*/React.createElement("div", {
+      className: "fabric-placeholder"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "label"
+    }, "Jacquard head \xB7 2688 hooks")), /*#__PURE__*/React.createElement("div", {
+      className: "fabric-placeholder"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "label"
+    }, "Design studio"))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "100px 0"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        maxWidth: 900,
+        margin: "0 auto",
+        textAlign: "center"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 72,
+        color: "var(--accent)",
+        lineHeight: 0.5,
+        marginBottom: 24
+      }
+    }, "\""), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 32,
+        lineHeight: 1.35,
+        letterSpacing: "-0.015em"
+      }
+    }, "A loom is a promise made in thread. ", /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "Every meter we weave must keep that promise"), " \u2014 to the buyer, to the wearer, and to the weaver whose hands threaded it."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 40,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 8
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: 56,
+        height: 1,
+        background: "var(--ink-20)"
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontWeight: 500,
+        fontSize: 15
+      }
+    }, "Himmatbhai Gondaliya"), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)"
+      }
+    }, "Founder \xB7 Jagannath Fabrics"))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "100px 0",
+        background: "var(--cream-50)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 20
+      }
+    }, "\u2014 A timeline"), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        marginBottom: 72
+      }
+    }, "From four looms", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic"
+    }, "to four continents.")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "relative",
+        paddingLeft: 56
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        left: 12,
+        top: 10,
+        bottom: 10,
+        width: 1,
+        background: "var(--ink-20)"
+      }
+    }), TIMELINE.map((t, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        position: "relative",
+        paddingBottom: 56
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        left: -50,
+        top: 10,
+        width: 24,
+        height: 24,
+        borderRadius: "50%",
+        background: "var(--cream-50)",
+        border: `2px solid var(--accent)`,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: 8,
+        height: 8,
+        borderRadius: "50%",
+        background: "var(--accent)"
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "120px 1fr",
+        gap: 40,
+        alignItems: "start"
+      },
+      className: "tl-row"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 40,
+        letterSpacing: "-0.02em",
+        color: "var(--accent)"
+      }
+    }, t.year), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 26,
+        marginBottom: 10,
+        letterSpacing: "-0.01em"
+      }
+    }, t.title), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 15,
+        lineHeight: 1.6,
+        maxWidth: 620
+      }
+    }, t.body)))))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "120px 0"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1.2fr",
+        gap: 80,
+        alignItems: "center"
+      },
+      className: "lead-grid"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "fabric-placeholder",
+      style: {
+        aspectRatio: "4/5",
+        borderRadius: 8
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "label"
+    }, "Himmatbhai Gondaliya \xB7 Portrait")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 20
+      }
+    }, "\u2014 Founder"), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        marginBottom: 32
+      }
+    }, "Himmatbhai", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic"
+    }, "Gondaliya")), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 16,
+        color: "var(--ink-60)",
+        lineHeight: 1.7,
+        marginBottom: 20
+      }
+    }, "Himmatbhai started Jagannath Fabrics in 1998 \u2014 a young weaver from Gujarat who believed Surat's rapier looms could produce jacquards as fine as any in the country, if only the craftsmanship was patient enough."), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 16,
+        color: "var(--ink-60)",
+        lineHeight: 1.7
+      }
+    }, "Twenty-seven years later, he still walks the shop floor every morning, approves every new shade card, and knows most of his weavers by name. The mill has grown; the way we work has not changed."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 32,
+        padding: "20px 0",
+        borderTop: "1px solid var(--ink-10)",
+        display: "flex",
+        gap: 40
+      }
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-40)",
+        marginBottom: 6
+      }
+    }, "Since"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 24
+      }
+    }, "1998")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-40)",
+        marginBottom: 6
+      }
+    }, "On the floor"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 24
+      }
+    }, "Every day"))))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "100px 0",
+        background: "var(--ink)",
+        color: "var(--bone)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 20,
+        color: "rgba(250,246,237,0.5)"
+      }
+    }, "\u2014 What we stand for"), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        color: "var(--bone)",
+        marginBottom: 64
+      }
+    }, "Four values,", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "woven in.")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(2, 1fr)",
+        gap: 48
+      },
+      className: "val-grid"
+    }, [{
+      n: "01",
+      t: "Craft before speed",
+      b: "We'd rather re-weave a meter than pass a flaw. Every roll is inspected before it leaves the floor."
+    }, {
+      n: "02",
+      t: "Partnership over transaction",
+      b: "Many of our buyers have stayed with us for 15+ years. We grow when they grow."
+    }, {
+      n: "03",
+      t: "Respect the shop floor",
+      b: "Our weavers are our oldest partners. Training, safety and fair wages are non-negotiable."
+    }, {
+      n: "04",
+      t: "Honesty in the shade card",
+      b: "The swatch you approve is the fabric you receive. We back it with batch-level traceability."
+    }].map((v, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        paddingTop: 24,
+        borderTop: "1px solid rgba(250,246,237,0.15)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--accent)",
+        marginBottom: 20
+      }
+    }, v.n), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 28,
+        letterSpacing: "-0.015em",
+        marginBottom: 14
+      }
+    }, v.t), /*#__PURE__*/React.createElement("p", {
+      style: {
+        opacity: 0.7,
+        fontSize: 15,
+        lineHeight: 1.6
+      }
+    }, v.b)))))), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 1000px) {
+          .ab-hero, .val-grid, .ab-strip { grid-template-columns: 1fr !important; }
+          .lead-grid { grid-template-columns: 1fr !important; }
+          .ab-strip > * { height: 240px; }
+          .tl-row { grid-template-columns: 1fr !important; gap: 12px !important; }
+        }
+      `));
+  };
+  Object.assign(window, {
+    AboutPage
+  });
+})();
+;
+(function () {
+  // Collection page — filterable product grid
+
+  const CollectionPage = ({
+    setRoute
+  }) => {
+    const [typeF, setTypeF] = React.useState("All");
+    const [useF, setUseF] = React.useState("All");
+    const [colorF, setColorF] = React.useState("All");
+    const [search, setSearch] = React.useState("");
+    const [active, setActive] = React.useState(null);
+    const filtered = COLLECTIONS.filter(p => {
+      if (typeF !== "All" && p.type !== typeF) return false;
+      if (useF !== "All" && p.use !== useF) return false;
+      if (colorF !== "All" && p.color !== colorF) return false;
+      if (search && !`${p.name} ${p.id} ${p.type} ${p.use}`.toLowerCase().includes(search.toLowerCase())) return false;
+      return true;
+    });
+    const Chip = ({
+      label,
+      active,
+      onClick
+    }) => /*#__PURE__*/React.createElement("button", {
+      onClick: onClick,
+      style: {
+        padding: "7px 14px",
+        borderRadius: 999,
+        fontSize: 12,
+        border: `1px solid ${active ? "var(--ink)" : "var(--ink-20)"}`,
+        background: active ? "var(--ink)" : "transparent",
+        color: active ? "var(--bone)" : "var(--ink)",
+        fontFamily: "var(--mono)",
+        letterSpacing: "0.08em",
+        textTransform: "uppercase",
+        fontWeight: 500,
+        transition: "all 0.2s"
+      }
+    }, label);
+    return /*#__PURE__*/React.createElement("div", {
+      className: "page-enter"
+    }, /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "80px 0 40px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 32
+      }
+    }, "\u2014 The collection \xB7 ", COLLECTIONS.length, " fabrics in view"), /*#__PURE__*/React.createElement("h1", {
+      style: {
+        marginBottom: 32
+      }
+    }, "A working", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "swatch library.")), /*#__PURE__*/React.createElement("p", {
+      style: {
+        maxWidth: 620,
+        fontSize: 17,
+        color: "var(--ink-60)",
+        lineHeight: 1.6
+      }
+    }, "Current running designs from our Sachin unit and partner mills. Every fabric is sample-ready. Request swatches, tech packs or a full shade card for any SKU. We courier swatches worldwide."))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        position: "sticky",
+        top: 74,
+        zIndex: 20,
+        background: "rgba(247,243,234,0.94)",
+        backdropFilter: "blur(14px)",
+        borderTop: "1px solid var(--ink-10)",
+        borderBottom: "1px solid var(--ink-10)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container",
+      style: {
+        padding: "20px 0"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 24,
+        flexWrap: "wrap",
+        alignItems: "center"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+        flex: 1,
+        minWidth: 220,
+        maxWidth: 320
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 13,
+        color: "var(--ink-60)"
+      }
+    }, "\u2315"), /*#__PURE__*/React.createElement("input", {
+      value: search,
+      onChange: e => setSearch(e.target.value),
+      placeholder: "Search by name, SKU, use\u2026",
+      style: {
+        flex: 1,
+        border: "none",
+        outline: "none",
+        background: "transparent",
+        fontSize: 14,
+        padding: "8px 0",
+        borderBottom: "1px solid var(--ink-20)"
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 24,
+        flexWrap: "wrap",
+        alignItems: "center"
+      }
+    }, /*#__PURE__*/React.createElement(FilterGroup, {
+      label: "Type",
+      options: FILTERS.type,
+      value: typeF,
+      onChange: setTypeF
+    }), /*#__PURE__*/React.createElement(FilterGroup, {
+      label: "Use",
+      options: FILTERS.use,
+      value: useF,
+      onChange: setUseF
+    }), /*#__PURE__*/React.createElement(FilterGroup, {
+      label: "Color",
+      options: FILTERS.color,
+      value: colorF,
+      onChange: setColorF
+    })), (typeF !== "All" || useF !== "All" || colorF !== "All" || search) && /*#__PURE__*/React.createElement("button", {
+      onClick: () => {
+        setTypeF("All");
+        setUseF("All");
+        setColorF("All");
+        setSearch("");
+      },
+      className: "mono",
+      style: {
+        color: "var(--accent)",
+        padding: "6px 0"
+      }
+    }, "Clear all \xD7")))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "56px 0 120px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        marginBottom: 32
+      }
+    }, "Showing ", filtered.length, " of ", COLLECTIONS.length, " \xB7 updated Apr 2026"), filtered.length === 0 ? /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: "120px 0",
+        textAlign: "center",
+        color: "var(--ink-60)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 32,
+        marginBottom: 10
+      }
+    }, "No fabrics match."), /*#__PURE__*/React.createElement("p", null, "Try a different filter combination \u2014 or reach out and we'll weave it for you.")) : /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gap: 24
+      },
+      className: "coll-grid"
+    }, filtered.map(p => /*#__PURE__*/React.createElement("div", {
+      key: p.id,
+      onClick: () => setActive(p),
+      style: {
+        cursor: "pointer",
+        position: "relative"
+      },
+      onMouseEnter: e => {
+        e.currentTarget.querySelector(".swatch").style.transform = "scale(1.04)";
+      },
+      onMouseLeave: e => {
+        e.currentTarget.querySelector(".swatch").style.transform = "scale(1)";
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        aspectRatio: "3/4",
+        background: "var(--cream-200)",
+        borderRadius: 6,
+        overflow: "hidden",
+        marginBottom: 16,
+        position: "relative"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "swatch",
+      style: {
+        width: "100%",
+        height: "100%",
+        transition: "transform 0.6s cubic-bezier(.2,.7,.2,1)"
+      }
+    }, /*#__PURE__*/React.createElement(FabricSwatch, {
+      baseColor: p.hex,
+      motifColor: p.motifColor,
+      motif: p.motif
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        top: 12,
+        left: 12,
+        background: "rgba(250,246,237,0.92)",
+        padding: "4px 10px",
+        borderRadius: 999,
+        fontFamily: "var(--mono)",
+        fontSize: 10,
+        letterSpacing: "0.1em",
+        textTransform: "uppercase"
+      }
+    }, p.type)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "baseline",
+        marginBottom: 4
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 20,
+        letterSpacing: "-0.01em"
+      }
+    }, p.name), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-40)",
+        fontSize: 10
+      }
+    }, p.id)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        color: "var(--ink-60)",
+        fontSize: 13
+      }
+    }, /*#__PURE__*/React.createElement("span", null, p.use), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontWeight: 500,
+        color: "var(--ink)"
+      }
+    }, p.price))))))), active && /*#__PURE__*/React.createElement(ProductSheet, {
+      product: active,
+      onClose: () => setActive(null),
+      setRoute: setRoute
+    }), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 1100px) { .coll-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+        @media (max-width: 800px) { .coll-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+        @media (max-width: 500px) { .coll-grid { grid-template-columns: 1fr !important; } }
+      `));
+  };
+  const FilterGroup = ({
+    label,
+    options,
+    value,
+    onChange
+  }) => {
+    const [open, setOpen] = React.useState(false);
+    const ref = React.useRef(null);
+    React.useEffect(() => {
+      const h = e => {
+        if (ref.current && !ref.current.contains(e.target)) setOpen(false);
+      };
+      document.addEventListener("mousedown", h);
+      return () => document.removeEventListener("mousedown", h);
+    }, []);
+    return /*#__PURE__*/React.createElement("div", {
+      ref: ref,
+      style: {
+        position: "relative"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      onClick: () => setOpen(!open),
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 8,
+        padding: "7px 14px",
+        borderRadius: 999,
+        border: `1px solid ${value !== "All" ? "var(--ink)" : "var(--ink-20)"}`,
+        background: value !== "All" ? "var(--ink)" : "transparent",
+        color: value !== "All" ? "var(--bone)" : "var(--ink)",
+        fontFamily: "var(--mono)",
+        fontSize: 11,
+        letterSpacing: "0.08em",
+        textTransform: "uppercase"
+      }
+    }, label, ": ", value, " ", /*#__PURE__*/React.createElement("span", {
+      style: {
+        opacity: 0.6
+      }
+    }, open ? "▴" : "▾")), open && /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        top: "calc(100% + 8px)",
+        left: 0,
+        background: "var(--bone)",
+        border: "1px solid var(--ink-10)",
+        borderRadius: 8,
+        padding: 8,
+        boxShadow: "var(--shadow-lg)",
+        zIndex: 30,
+        minWidth: 180
+      }
+    }, options.map(o => /*#__PURE__*/React.createElement("div", {
+      key: o,
+      onClick: () => {
+        onChange(o);
+        setOpen(false);
+      },
+      style: {
+        padding: "8px 12px",
+        fontSize: 13,
+        cursor: "pointer",
+        borderRadius: 4,
+        background: value === o ? "var(--cream-100)" : "transparent",
+        color: value === o ? "var(--accent)" : "var(--ink)",
+        fontWeight: value === o ? 500 : 400
+      }
+    }, o))));
+  };
+  const ProductSheet = ({
+    product,
+    onClose,
+    setRoute
+  }) => {
+    React.useEffect(() => {
+      document.body.style.overflow = "hidden";
+      const onKey = e => {
+        if (e.key === "Escape") onClose();
+      };
+      window.addEventListener("keydown", onKey);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", onKey);
+      };
+    }, []);
+    return /*#__PURE__*/React.createElement("div", {
+      onClick: onClose,
+      style: {
+        position: "fixed",
+        inset: 0,
+        zIndex: 100,
+        background: "rgba(26,20,16,0.55)",
+        backdropFilter: "blur(6px)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 24,
+        animation: "fadeUp 0.25s ease"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      onClick: e => e.stopPropagation(),
+      style: {
+        background: "var(--cream-50)",
+        borderRadius: 10,
+        maxWidth: 1000,
+        width: "100%",
+        maxHeight: "90vh",
+        overflow: "auto",
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr"
+      },
+      className: "prod-sheet"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        minHeight: 480
+      }
+    }, /*#__PURE__*/React.createElement(FabricSwatch, {
+      baseColor: product.hex,
+      motifColor: product.motifColor,
+      motif: product.motif
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: 40,
+        display: "flex",
+        flexDirection: "column",
+        gap: 20
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "start"
+      }
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        marginBottom: 10
+      }
+    }, product.id, " \xB7 ", product.type), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 36,
+        letterSpacing: "-0.02em",
+        lineHeight: 1
+      }
+    }, product.name)), /*#__PURE__*/React.createElement("button", {
+      onClick: onClose,
+      style: {
+        fontSize: 22,
+        color: "var(--ink-60)"
+      }
+    }, "\xD7")), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 15,
+        lineHeight: 1.6
+      }
+    }, "A ", product.type.toLowerCase(), " woven on rapier looms with electronic jacquard heads, finished for ", product.use.toLowerCase(), " end use."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: 14,
+        padding: "20px 0",
+        borderTop: "1px solid var(--ink-10)",
+        borderBottom: "1px solid var(--ink-10)"
+      }
+    }, [{
+      l: "Use",
+      v: product.use
+    }, {
+      l: "Color",
+      v: product.color
+    }, {
+      l: "Yarn",
+      v: product.yarn
+    }, {
+      l: "Width",
+      v: product.width
+    }, {
+      l: "GSM",
+      v: product.gsm
+    }, {
+      l: "Indicative price",
+      v: product.price
+    }].map((r, i) => /*#__PURE__*/React.createElement("div", {
+      key: i
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-40)",
+        marginBottom: 4
+      }
+    }, r.l), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 15
+      }
+    }, r.v)))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 13,
+        color: "var(--ink-60)",
+        padding: "4px 0"
+      }
+    }, "Minimum order: ", /*#__PURE__*/React.createElement("strong", {
+      style: {
+        color: "var(--ink)"
+      }
+    }, "500 m"), " \xB7 Sampling lead time: ", /*#__PURE__*/React.createElement("strong", {
+      style: {
+        color: "var(--ink)"
+      }
+    }, "72 hours"), " \xB7 Bulk lead time: ", /*#__PURE__*/React.createElement("strong", {
+      style: {
+        color: "var(--ink)"
+      }
+    }, "14\u201321 days")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 13,
+        color: "var(--ink-60)"
+      }
+    }, "Ordering from abroad? We quote in USD, EUR or INR on FOB or CIF terms."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 10,
+        marginTop: "auto"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      className: "btn btn-primary",
+      onClick: () => {
+        onClose();
+        setRoute("contact");
+      }
+    }, "Request swatch or order ", /*#__PURE__*/React.createElement("span", {
+      className: "arrow"
+    }, "\u2192")), /*#__PURE__*/React.createElement("button", {
+      className: "btn btn-ghost"
+    }, "Download tech pack")))), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 800px) { .prod-sheet { grid-template-columns: 1fr !important; } }
+      `));
+  };
+  Object.assign(window, {
+    CollectionPage
+  });
+})();
+;
+(function () {
+  // Process page
+
+  const ProcessPage = ({
+    setRoute
+  }) => {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "page-enter"
+    }, /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "80px 0 40px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 32
+      }
+    }, "\u2014 How we weave"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1.4fr 1fr",
+        gap: 64,
+        alignItems: "end"
+      },
+      className: "pr-hero"
+    }, /*#__PURE__*/React.createElement("h1", null, "From brief to", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "bolt."), /*#__PURE__*/React.createElement("br", null), "Six steps."), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 17,
+        color: "var(--ink-60)",
+        lineHeight: 1.6
+      }
+    }, "Our process has been shaped by 27 years of running jacquard looms \u2014 refined for speed when a buyer needs samples in 72 hours, and for precision when a bulk order runs 40,000 meters.")))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "80px 0"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, PROCESS_STEPS.map((s, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        display: "grid",
+        gridTemplateColumns: "140px 1fr 1.2fr",
+        gap: 48,
+        padding: "56px 0",
+        borderTop: i === 0 ? "1px solid var(--ink-10)" : "none",
+        borderBottom: "1px solid var(--ink-10)",
+        alignItems: "start"
+      },
+      className: "pr-row"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--accent)",
+        fontSize: 13,
+        letterSpacing: "0.18em"
+      }
+    }, "\u2014 STEP ", s.n), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 44,
+        letterSpacing: "-0.025em",
+        lineHeight: 1,
+        marginBottom: 20
+      }
+    }, s.title), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 15,
+        lineHeight: 1.65,
+        maxWidth: 500
+      }
+    }, s.body)), /*#__PURE__*/React.createElement("div", {
+      className: "fabric-placeholder",
+      style: {
+        height: 240,
+        borderRadius: 6
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "label"
+    }, "Step ", s.n, " \xB7 ", s.title)))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "100px 0",
+        background: "var(--ink)",
+        color: "var(--bone)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        color: "rgba(250,246,237,0.5)",
+        marginBottom: 20
+      }
+    }, "\u2014 Inside the unit"), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        color: "var(--bone)",
+        marginBottom: 64
+      }
+    }, "Machines,", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "measured.")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gap: 32
+      },
+      className: "spec-grid"
+    }, [{
+      n: "120+",
+      l: "Rapier looms",
+      s: "In-house + partner network"
+    }, {
+      n: "400–550",
+      l: "Picks / min",
+      s: "Average across the fleet"
+    }, {
+      n: "2688",
+      l: "Max hooks",
+      s: "Electronic jacquard heads"
+    }, {
+      n: "58\"",
+      l: "Max width",
+      s: "Furnishing & upholstery"
+    }, {
+      n: "Every roll",
+      l: "Inspection",
+      s: "Visual + four-point"
+    }, {
+      n: "72 hrs",
+      l: "Sample TAT",
+      s: "From approved artwork"
+    }, {
+      n: "14–21 d",
+      l: "Bulk TAT",
+      s: "500 m to 40,000 m"
+    }, {
+      n: "28 yrs",
+      l: "On the floor",
+      s: "Weaving since 1998"
+    }].map((k, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        paddingTop: 24,
+        borderTop: "1px solid rgba(250,246,237,0.15)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 44,
+        letterSpacing: "-0.02em",
+        lineHeight: 1
+      }
+    }, k.n), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 14,
+        marginTop: 10,
+        fontWeight: 500
+      }
+    }, k.l), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        opacity: 0.5,
+        marginTop: 6
+      }
+    }, k.s)))))), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 900px) {
+          .pr-hero, .pr-row, .spec-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+        }
+        @media (max-width: 700px) {
+          .spec-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+      `));
+  };
+  Object.assign(window, {
+    ProcessPage
+  });
+})();
+;
+(function () {
+  // Sustainability page
+
+  const SustainabilityPage = ({
+    setRoute
+  }) => {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "page-enter"
+    }, /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "80px 0 40px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 32
+      }
+    }, "\u2014 Sustainability"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1.4fr 1fr",
+        gap: 64,
+        alignItems: "end"
+      },
+      className: "su-hero"
+    }, /*#__PURE__*/React.createElement("h1", null, "A textile mill", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "that gives back"), /*#__PURE__*/React.createElement("br", null), "what it takes."), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 17,
+        color: "var(--ink-60)",
+        lineHeight: 1.6
+      }
+    }, "We've spent 2019\u20132026 building infrastructure that lowers our footprint \u2014 cleaner energy, safer dyes, thoughtful waste handling \u2014 and encouraging our partner mills to do the same.")))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "60px 0 100px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(2, 1fr)",
+        gap: 24
+      },
+      className: "su-grid"
+    }, SUSTAINABILITY.map((s, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        padding: 40,
+        background: i % 2 === 0 ? "var(--bone)" : "var(--cream-50)",
+        border: "1px solid var(--ink-10)",
+        borderRadius: 8,
+        display: "grid",
+        gridTemplateColumns: "auto 1fr",
+        gap: 32,
+        alignItems: "center"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 84,
+        letterSpacing: "-0.035em",
+        lineHeight: 0.9,
+        color: "var(--accent)"
+      }
+    }, s.stat), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 24,
+        letterSpacing: "-0.01em",
+        marginBottom: 10
+      }
+    }, s.label), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 14,
+        lineHeight: 1.6
+      }
+    }, s.body))))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "80px 0",
+        background: "var(--cream-50)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 20
+      }
+    }, "\u2014 Certifications"), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        marginBottom: 56
+      }
+    }, "Standards", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic"
+    }, "we hold ourselves to.")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gap: 20
+      },
+      className: "cert-grid"
+    }, [{
+      t: "OEKO-TEX ready",
+      s: "Targeting Standard 100 audit"
+    }, {
+      t: "REACH ready",
+      s: "Working toward EU compliance"
+    }, {
+      t: "Azo-free dyes",
+      s: "Across regular shade cards"
+    }, {
+      t: "Four-point QC",
+      s: "On every finished roll"
+    }].map((c, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        padding: "32px 28px",
+        background: "var(--bone)",
+        border: "1px solid var(--ink-10)",
+        borderRadius: 8
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: 40,
+        height: 40,
+        borderRadius: "50%",
+        border: "1.5px solid var(--accent)",
+        marginBottom: 24,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "var(--accent)",
+        fontFamily: "var(--serif)",
+        fontSize: 20,
+        fontStyle: "italic"
+      }
+    }, "\u2713"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 22,
+        letterSpacing: "-0.01em"
+      }
+    }, c.t), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        marginTop: 8
+      }
+    }, c.s)))))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "120px 0"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        maxWidth: 760
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 20
+      }
+    }, "\u2014 Road to 2030"), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        marginBottom: 40
+      }
+    }, "Where we're", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "headed next.")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        flexDirection: "column",
+        gap: 20
+      }
+    }, [{
+      y: "2027",
+      t: "Higher rooftop solar coverage at the Sachin unit"
+    }, {
+      y: "2028",
+      t: "Mechanical recycling pilot for pre-consumer fabric waste"
+    }, {
+      y: "2029",
+      t: "Wider shift toward recycled and organic yarns"
+    }, {
+      y: "2030",
+      t: "Target: carbon-neutral weaving at the main unit"
+    }].map((p, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        display: "grid",
+        gridTemplateColumns: "120px 1fr auto",
+        gap: 32,
+        padding: "22px 0",
+        borderTop: "1px solid var(--ink-10)",
+        alignItems: "center"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 28,
+        letterSpacing: "-0.02em"
+      }
+    }, p.y), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 16
+      }
+    }, p.t), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-40)"
+      }
+    }, "Planned"))))))), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 1000px) {
+          .su-hero, .su-grid, .cert-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 700px) {
+          .cert-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+      `));
+  };
+  Object.assign(window, {
+    SustainabilityPage
+  });
+})();
+;
+(function () {
+  // Contact page — validated inquiry form
+
+  const ContactField = ({
+    label,
+    k,
+    type = "text",
+    placeholder,
+    required,
+    full,
+    children,
+    form,
+    set,
+    blur,
+    errors,
+    touched
+  }) => {
+    const has = errors[k] && touched[k];
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        gridColumn: full ? "1 / -1" : "auto"
+      }
+    }, /*#__PURE__*/React.createElement("label", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        marginBottom: 8
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "mono",
+      style: {
+        color: has ? "var(--accent)" : "var(--ink-60)"
+      }
+    }, label, " ", required && /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: "var(--accent)"
+      }
+    }, "*")), has && /*#__PURE__*/React.createElement("span", {
+      className: "mono",
+      style: {
+        color: "var(--accent)"
+      }
+    }, errors[k])), children ? children : /*#__PURE__*/React.createElement("input", {
+      type: type,
+      value: form[k],
+      onChange: e => set(k, e.target.value),
+      onBlur: () => blur(k),
+      placeholder: placeholder,
+      style: {
+        width: "100%",
+        padding: "14px 0",
+        background: "transparent",
+        border: "none",
+        borderBottom: `1px solid ${has ? "var(--accent)" : "var(--ink-20)"}`,
+        fontSize: 16,
+        outline: "none",
+        transition: "border-color 0.2s"
+      },
+      onFocus: e => {
+        if (!has) e.target.style.borderBottomColor = "var(--ink)";
+      }
+    }));
+  };
+  const ContactPage = ({
+    setRoute
+  }) => {
+    const [form, setForm] = React.useState({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      country: "India",
+      market: "India",
+      request: "Price quote",
+      port: "",
+      incoterm: "FOB",
+      currency: "USD",
+      type: "Jacquard",
+      use: "Dress Material",
+      qty: "500",
+      message: "",
+      newsletter: true
+    });
+    const [errors, setErrors] = React.useState({});
+    const [submitted, setSubmitted] = React.useState(false);
+    const [touched, setTouched] = React.useState({});
+    const [sending, setSending] = React.useState(false);
+    const [sendError, setSendError] = React.useState("");
+    const validate = f => {
+      const e = {};
+      if (!f.name.trim()) e.name = "Please tell us your name";else if (f.name.trim().length < 2) e.name = "Name is too short";
+      if (!f.email.trim()) e.email = "Email is required";else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email)) e.email = "That email doesn't look right";
+      if (f.phone && !/^[+()\s\d-]{7,}$/.test(f.phone)) e.phone = "Check the phone format";
+      if (f.market === "Export" && !f.country.trim()) e.country = "Tell us your country";
+      if (!f.message.trim()) e.message = "A brief message helps us reply faster";else if (f.message.trim().length < 10) e.message = "Add a little more detail";
+      if (!/^\d+$/.test(f.qty) || parseInt(f.qty) < 100) e.qty = "Minimum order is 500 m — enter 100+";
+      return e;
+    };
+    const set = (k, v) => {
+      const nf = {
+        ...form,
+        [k]: v
+      };
+      setForm(nf);
+      if (touched[k]) setErrors(validate(nf));
+    };
+    const blur = k => {
+      setTouched({
+        ...touched,
+        [k]: true
+      });
+      setErrors(validate(form));
+    };
+    const submit = async e => {
+      e.preventDefault();
+      const eobj = validate(form);
+      setErrors(eobj);
+      setTouched({
+        name: true,
+        email: true,
+        phone: true,
+        message: true,
+        qty: true,
+        country: true
+      });
+      if (Object.keys(eobj).length !== 0) return;
+      setSending(true);
+      setSendError("");
+      try {
+        // Formspree endpoint — replace with your own after signing up at formspree.io
+        // Submissions land in jagannathfabrics@gmail.com
+        const FORMSPREE_ID = "YOUR_FORM_ID"; // paste your Formspree form ID here
+        if (FORMSPREE_ID === "YOUR_FORM_ID") {
+          setSending(false);
+          setSendError("ready");
+          return;
+        }
+        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            _subject: `New inquiry — ${form.qty}m ${form.type} from ${form.name}`,
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            company: form.company,
+            country: form.country,
+            buyer_market: form.market,
+            request: form.request,
+            destination_port: form.port,
+            incoterm: form.incoterm,
+            quote_currency: form.currency,
+            _replyto: form.email,
+            fabric_type: form.type,
+            end_use: form.use,
+            quantity_meters: form.qty,
+            message: form.message,
+            newsletter: form.newsletter ? "Yes" : "No"
+          })
+        });
+        if (!res.ok) throw new Error("Submission failed");
+        setSubmitted(true);
+      } catch (err) {
+        setSendError("ready");
+      } finally {
+        setSending(false);
+      }
+    };
+    const whatsappHref = () => {
+      const lines = [`Hello Jagannath Fabrics, I'd like a ${(form.request || "price quote").toLowerCase()} for ${form.type || "fabric"}.`, form.name && `Name: ${form.name}`, form.company && `Company: ${form.company}`, form.country && `Country: ${form.country}`, form.market === "Export" && form.port && `Destination port: ${form.port}`, form.market === "Export" && `Terms: ${form.incoterm}, quote in ${form.currency}`, form.qty && `Quantity: ${form.qty} m`, form.use && `End use: ${form.use}`, form.message && `\n${form.message}`].filter(Boolean).join("\n");
+      return `https://wa.me/919978633155?text=${encodeURIComponent(lines)}`;
+    };
+    const fieldProps = {
+      form,
+      set,
+      blur,
+      errors,
+      touched
+    };
+    if (submitted) {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "page-enter",
+        style: {
+          padding: "120px 0 160px"
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          maxWidth: 680,
+          margin: "0 auto",
+          textAlign: "center"
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        style: {
+          fontFamily: "var(--serif)",
+          fontSize: 64,
+          color: "var(--accent)",
+          fontStyle: "italic",
+          marginBottom: 32
+        }
+      }, "\u2726"), /*#__PURE__*/React.createElement("div", {
+        className: "eyebrow",
+        style: {
+          marginBottom: 20
+        }
+      }, "\u2014 Inquiry received"), /*#__PURE__*/React.createElement("h1", {
+        style: {
+          marginBottom: 28
+        }
+      }, "Thank you,", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+        className: "serif-italic",
+        style: {
+          color: "var(--accent)"
+        }
+      }, form.name.split(" ")[0] || "friend", ".")), /*#__PURE__*/React.createElement("p", {
+        style: {
+          fontSize: 17,
+          color: "var(--ink-60)",
+          marginBottom: 40,
+          lineHeight: 1.6
+        }
+      }, "We've received your inquiry for ", /*#__PURE__*/React.createElement("strong", null, form.qty, " m"), " of ", /*#__PURE__*/React.createElement("strong", null, form.type), " (", form.use, "). A member of our sales team will reply to ", /*#__PURE__*/React.createElement("strong", null, form.email), " within one working day."), /*#__PURE__*/React.createElement("div", {
+        style: {
+          maxWidth: 480,
+          margin: "0 auto",
+          padding: 24,
+          background: "var(--cream-50)",
+          borderRadius: 8,
+          border: "1px solid var(--ink-10)",
+          fontSize: 14,
+          color: "var(--ink-60)",
+          lineHeight: 1.6,
+          textAlign: "left"
+        }
+      }, /*#__PURE__*/React.createElement("div", {
+        className: "mono",
+        style: {
+          color: "var(--ink-40)",
+          marginBottom: 12
+        }
+      }, "WHILE YOU WAIT"), "For urgent quotes, call ", /*#__PURE__*/React.createElement("strong", {
+        style: {
+          color: "var(--ink)"
+        }
+      }, COMPANY.phone), " during business hours (Mon\u2013Sat, 10:00\u201319:00 IST). For samples in Surat, walk into our Sachin unit \u2014 chai is on us."), /*#__PURE__*/React.createElement("div", {
+        style: {
+          marginTop: 40,
+          display: "flex",
+          gap: 12,
+          justifyContent: "center"
+        }
+      }, /*#__PURE__*/React.createElement("button", {
+        className: "btn btn-ghost",
+        onClick: () => setRoute("home")
+      }, "Back to home"), /*#__PURE__*/React.createElement("button", {
+        className: "btn btn-primary",
+        onClick: () => {
+          setSubmitted(false);
+          setForm({
+            ...form,
+            message: "",
+            qty: "500"
+          });
+        }
+      }, "Send another inquiry \u2192")))));
+    }
+    return /*#__PURE__*/React.createElement("div", {
+      className: "page-enter"
+    }, /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "80px 0 40px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 32
+      }
+    }, "\u2014 Inquiry"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1.3fr 1fr",
+        gap: 64,
+        alignItems: "end"
+      },
+      className: "co-hero"
+    }, /*#__PURE__*/React.createElement("h1", null, "Start a sample.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      className: "serif-italic",
+      style: {
+        color: "var(--accent)"
+      }
+    }, "Start a shipment.")), /*#__PURE__*/React.createElement("p", {
+      style: {
+        fontSize: 17,
+        color: "var(--ink-60)",
+        lineHeight: 1.6
+      }
+    }, "Buying in India or importing from abroad, tell us what you need. Our sales desk replies within one working day (India time) with fabric options, a sampling plan and pricing in USD, EUR or INR.")))), /*#__PURE__*/React.createElement("section", {
+      style: {
+        padding: "60px 0 120px"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1.4fr 1fr",
+        gap: 80
+      },
+      className: "co-grid"
+    }, /*#__PURE__*/React.createElement("form", {
+      onSubmit: submit,
+      noValidate: true
+    }, /*#__PURE__*/React.createElement("fieldset", {
+      style: {
+        border: "none",
+        padding: 0,
+        margin: "0 0 40px"
+      }
+    }, /*#__PURE__*/React.createElement("legend", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        marginBottom: 12,
+        padding: 0
+      }
+    }, "Where are you buying from?"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 10,
+        flexWrap: "wrap"
+      }
+    }, [{
+      v: "India",
+      l: "Within India"
+    }, {
+      v: "Export",
+      l: "Outside India (export)"
+    }].map(o => /*#__PURE__*/React.createElement("button", {
+      type: "button",
+      key: o.v,
+      "aria-pressed": form.market === o.v,
+      onClick: () => setForm({
+        ...form,
+        market: o.v,
+        country: o.v === "India" ? "India" : form.country === "India" ? "" : form.country
+      }),
+      style: {
+        padding: "12px 20px",
+        borderRadius: 999,
+        fontSize: 14,
+        fontWeight: 500,
+        cursor: "pointer",
+        border: `1px solid ${form.market === o.v ? "var(--ink)" : "var(--ink-20)"}`,
+        background: form.market === o.v ? "var(--ink)" : "transparent",
+        color: form.market === o.v ? "var(--bone)" : "var(--ink)"
+      }
+    }, o.l)))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: 40
+      },
+      className: "co-form-grid"
+    }, /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "What do you need?",
+      k: "request",
+      full: true
+    }), /*#__PURE__*/React.createElement("select", {
+      id: "f-request",
+      value: form.request,
+      onChange: e => set("request", e.target.value),
+      style: {
+        width: "100%",
+        padding: "14px 0",
+        background: "transparent",
+        border: "none",
+        borderBottom: "1px solid var(--ink-20)",
+        fontSize: 16,
+        outline: "none",
+        appearance: "none"
+      }
+    }, ["Price quote", "Swatches / samples", "Place an order", "Custom design development"].map(o => /*#__PURE__*/React.createElement("option", {
+      key: o
+    }, o)))), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Your name",
+      k: "name",
+      required: true,
+      placeholder: "Full name"
+    })), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Email",
+      k: "email",
+      type: "email",
+      required: true,
+      placeholder: "you@company.com"
+    })), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Phone",
+      k: "phone",
+      type: "tel",
+      placeholder: "+ country code and number"
+    })), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Company",
+      k: "company",
+      placeholder: "Importer, brand or mill"
+    })), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Fabric type",
+      k: "type"
+    }), /*#__PURE__*/React.createElement("select", {
+      value: form.type,
+      onChange: e => set("type", e.target.value),
+      style: {
+        width: "100%",
+        padding: "14px 0",
+        background: "transparent",
+        border: "none",
+        borderBottom: "1px solid var(--ink-20)",
+        fontSize: 16,
+        outline: "none",
+        appearance: "none"
+      }
+    }, ["Jacquard", "Brocade", "Damask", "Satin Jacquard", "Dress Material", "Custom — specify below"].map(o => /*#__PURE__*/React.createElement("option", {
+      key: o
+    }, o)))), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "End use",
+      k: "use"
+    }), /*#__PURE__*/React.createElement("select", {
+      value: form.use,
+      onChange: e => set("use", e.target.value),
+      style: {
+        width: "100%",
+        padding: "14px 0",
+        background: "transparent",
+        border: "none",
+        borderBottom: "1px solid var(--ink-20)",
+        fontSize: 16,
+        outline: "none",
+        appearance: "none"
+      }
+    }, ["Dress Material", "Saree", "Bridal & Lehenga", "Upholstery", "Home Furnishing", "Apparel"].map(o => /*#__PURE__*/React.createElement("option", {
+      key: o
+    }, o)))), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Estimated quantity (meters)",
+      k: "qty",
+      placeholder: "e.g. 2000",
+      required: true
+    })), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Country",
+      k: "country",
+      placeholder: "e.g. UAE, USA, UK, Kenya",
+      required: form.market === "Export"
+    })), form.market === "Export" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Destination port / city",
+      k: "port",
+      placeholder: "e.g. Jebel Ali, Felixstowe"
+    })), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Preferred terms",
+      k: "incoterm"
+    }), /*#__PURE__*/React.createElement("select", {
+      id: "f-incoterm",
+      value: form.incoterm,
+      onChange: e => set("incoterm", e.target.value),
+      style: {
+        width: "100%",
+        padding: "14px 0",
+        background: "transparent",
+        border: "none",
+        borderBottom: "1px solid var(--ink-20)",
+        fontSize: 16,
+        outline: "none",
+        appearance: "none"
+      }
+    }, ["FOB", "CFR", "CIF", "EXW", "Not sure — advise me"].map(o => /*#__PURE__*/React.createElement("option", {
+      key: o
+    }, o)))), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Quote currency",
+      k: "currency"
+    }), /*#__PURE__*/React.createElement("select", {
+      id: "f-currency",
+      value: form.currency,
+      onChange: e => set("currency", e.target.value),
+      style: {
+        width: "100%",
+        padding: "14px 0",
+        background: "transparent",
+        border: "none",
+        borderBottom: "1px solid var(--ink-20)",
+        fontSize: 16,
+        outline: "none",
+        appearance: "none"
+      }
+    }, ["USD", "EUR", "GBP", "AED", "INR"].map(o => /*#__PURE__*/React.createElement("option", {
+      key: o
+    }, o))))), /*#__PURE__*/React.createElement(ContactField, _extends({}, fieldProps, {
+      label: "Tell us about the project",
+      k: "message",
+      full: true,
+      required: true
+    }), /*#__PURE__*/React.createElement("textarea", {
+      value: form.message,
+      onChange: e => set("message", e.target.value),
+      onBlur: () => blur("message"),
+      placeholder: "Fabric reference, tech pack notes, timeline, shade preferences\u2026",
+      rows: 5,
+      style: {
+        width: "100%",
+        padding: "14px 0",
+        background: "transparent",
+        border: "none",
+        borderBottom: `1px solid ${errors.message && touched.message ? "var(--accent)" : "var(--ink-20)"}`,
+        fontSize: 16,
+        outline: "none",
+        resize: "vertical",
+        fontFamily: "inherit"
+      }
+    }))), /*#__PURE__*/React.createElement("label", {
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12,
+        marginTop: 40,
+        cursor: "pointer"
+      }
+    }, /*#__PURE__*/React.createElement("input", {
+      type: "checkbox",
+      checked: form.newsletter,
+      onChange: e => set("newsletter", e.target.checked),
+      style: {
+        width: 18,
+        height: 18,
+        accentColor: "var(--accent)"
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 14,
+        color: "var(--ink-60)"
+      }
+    }, "Send me the monthly fabric journal \u2014 new designs, shade cards, trade shows.")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 48,
+        display: "flex",
+        alignItems: "center",
+        gap: 20,
+        flexWrap: "wrap"
+      }
+    }, /*#__PURE__*/React.createElement("button", {
+      type: "submit",
+      disabled: sending,
+      className: "btn btn-primary",
+      style: {
+        padding: "18px 28px",
+        opacity: sending ? 0.6 : 1
+      }
+    }, sending ? "Sending…" : "Send inquiry", " ", /*#__PURE__*/React.createElement("span", {
+      className: "arrow"
+    }, "\u2192")), /*#__PURE__*/React.createElement("a", {
+      href: whatsappHref(),
+      target: "_blank",
+      rel: "noopener",
+      className: "btn btn-ghost",
+      style: {
+        padding: "18px 24px",
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 10,
+        textDecoration: "none"
+      }
+    }, /*#__PURE__*/React.createElement("svg", {
+      width: "18",
+      height: "18",
+      viewBox: "0 0 24 24",
+      fill: "#25D366"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1c-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.9-3.1-.2-.3C4 14.9 3.5 13.5 3.5 12 3.5 7.3 7.3 3.5 12 3.5s8.5 3.8 8.5 8.5-3.8 8.2-8.5 8.2z"
+    })), "WhatsApp instead"), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)"
+      }
+    }, "Reply within 1 working day")), sendError === "ready" && /*#__PURE__*/React.createElement("div", {
+      role: "status",
+      style: {
+        marginTop: 24,
+        padding: "20px 22px",
+        background: "var(--cream-50)",
+        border: "1px solid var(--accent)",
+        borderRadius: 8,
+        fontSize: 14,
+        lineHeight: 1.6
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontWeight: 600,
+        marginBottom: 6
+      }
+    }, "Your inquiry is ready to send."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        color: "var(--ink-60)",
+        marginBottom: 14
+      }
+    }, "Send it on WhatsApp or by email to ", /*#__PURE__*/React.createElement("strong", {
+      style: {
+        color: "var(--ink)",
+        userSelect: "all"
+      }
+    }, COMPANY.email), ". If the email button does nothing, copy the text and email it yourself."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        gap: 10,
+        flexWrap: "wrap"
+      }
+    }, /*#__PURE__*/React.createElement("a", {
+      href: whatsappHref(),
+      target: "_blank",
+      rel: "noopener",
+      className: "btn btn-primary",
+      style: {
+        textDecoration: "none"
+      }
+    }, "Send on WhatsApp ", /*#__PURE__*/React.createElement("span", {
+      className: "arrow"
+    }, "\u2192")), /*#__PURE__*/React.createElement("a", {
+      href: "mailto:" + COMPANY.email + "?subject=" + encodeURIComponent("Inquiry - " + form.qty + " m " + form.type + " from " + form.name) + "&body=" + encodeURIComponent(decodeURIComponent(whatsappHref().split("?text=")[1]) + "\nEmail: " + form.email + (form.phone ? "\nPhone: " + form.phone : "")),
+      className: "btn btn-ghost",
+      style: {
+        textDecoration: "none"
+      }
+    }, "Send by email"), /*#__PURE__*/React.createElement("button", {
+      type: "button",
+      className: "btn btn-ghost",
+      onClick: ev => {
+        const txt = decodeURIComponent(whatsappHref().split("?text=")[1]) + (form.email ? "\nEmail: " + form.email : "") + (form.phone ? "\nPhone: " + form.phone : "");
+        const b = ev.currentTarget;
+        const done = () => {
+          b.textContent = "Copied";
+          setTimeout(() => {
+            b.textContent = "Copy inquiry text";
+          }, 2000);
+        };
+        try {
+          navigator.clipboard.writeText(txt).then(done, () => {});
+        } catch (_) {}
+      }
+    }, "Copy inquiry text")))), /*#__PURE__*/React.createElement("aside", {
+      style: {
+        paddingLeft: 0
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        background: "var(--ink)",
+        color: "var(--bone)",
+        padding: 40,
+        borderRadius: 10,
+        position: "relative",
+        overflow: "hidden"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "absolute",
+        right: -30,
+        bottom: -30,
+        opacity: 0.1
+      }
+    }, /*#__PURE__*/React.createElement(JacquardMotif, {
+      size: 200,
+      color: "var(--bone)",
+      opacity: 1
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        color: "rgba(250,246,237,0.5)",
+        marginBottom: 20
+      }
+    }, "\u2014 Visit the unit"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 24,
+        lineHeight: 1.3,
+        marginBottom: 24,
+        letterSpacing: "-0.01em"
+      }
+    }, "D2/15, Road No. 4, Hojiwala Industrial Estate, Sachin, Surat \u2014 394230"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        flexDirection: "column",
+        gap: 14,
+        fontSize: 14,
+        opacity: 0.85
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        borderTop: "1px solid rgba(250,246,237,0.15)",
+        paddingTop: 14
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "mono",
+      style: {
+        opacity: 0.6
+      }
+    }, "Phone / WhatsApp"), /*#__PURE__*/React.createElement("span", null, COMPANY.phone)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        borderTop: "1px solid rgba(250,246,237,0.15)",
+        paddingTop: 14
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "mono",
+      style: {
+        opacity: 0.6
+      }
+    }, "Email"), /*#__PURE__*/React.createElement("span", null, COMPANY.email)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        borderTop: "1px solid rgba(250,246,237,0.15)",
+        paddingTop: 14
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "mono",
+      style: {
+        opacity: 0.6
+      }
+    }, "Hours"), /*#__PURE__*/React.createElement("span", null, "Mon\u2013Sat \xB7 10:00\u201319:00 IST (GMT+5:30)"))), /*#__PURE__*/React.createElement("a", {
+      href: `https://wa.me/919978633155`,
+      target: "_blank",
+      rel: "noopener",
+      style: {
+        marginTop: 24,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 10,
+        padding: "14px 18px",
+        background: "#25D366",
+        color: "#0a1f0e",
+        borderRadius: 6,
+        textDecoration: "none",
+        fontWeight: 600,
+        fontSize: 14
+      }
+    }, /*#__PURE__*/React.createElement("svg", {
+      width: "18",
+      height: "18",
+      viewBox: "0 0 24 24",
+      fill: "#0a1f0e"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M17.5 14.4c-.3-.1-1.7-.8-2-.9s-.5-.1-.7.1c-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.9-3.1-.2-.3C4 14.9 3.5 13.5 3.5 12 3.5 7.3 7.3 3.5 12 3.5s8.5 3.8 8.5 8.5-3.8 8.2-8.5 8.2z"
+    })), "Chat on WhatsApp")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 28,
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gap: 16
+      }
+    }, [{
+      n: "72h",
+      l: "Sample TAT"
+    }, {
+      n: "500m",
+      l: "Min order"
+    }, {
+      n: "14d",
+      l: "Bulk TAT"
+    }, {
+      n: "FOB · CIF",
+      l: "Export terms"
+    }].map((s, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        padding: 20,
+        background: "var(--cream-50)",
+        border: "1px solid var(--ink-10)",
+        borderRadius: 6
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 28,
+        letterSpacing: "-0.02em"
+      }
+    }, s.n), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        marginTop: 6
+      }
+    }, s.l)))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 28,
+        padding: 28,
+        background: "var(--bone)",
+        border: "1px solid var(--ink-10)",
+        borderRadius: 8
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "eyebrow",
+      style: {
+        marginBottom: 14
+      }
+    }, "\u2014 For international buyers"), /*#__PURE__*/React.createElement("ul", {
+      style: {
+        margin: 0,
+        paddingLeft: 18,
+        display: "flex",
+        flexDirection: "column",
+        gap: 10,
+        fontSize: 14,
+        color: "var(--ink-60)",
+        lineHeight: 1.55
+      }
+    }, /*#__PURE__*/React.createElement("li", null, "Quotes in USD, EUR, GBP, AED or INR"), /*#__PURE__*/React.createElement("li", null, "Payment by TT or letter of credit"), /*#__PURE__*/React.createElement("li", null, "Swatches sent by international courier"), /*#__PURE__*/React.createElement("li", null, "Sea freight from Nhava Sheva or Mundra, FCL or LCL"), /*#__PURE__*/React.createElement("li", null, "Invoice, packing list, certificate of origin and bill of lading provided"), /*#__PURE__*/React.createElement("li", null, "We reply in English, Hindi or Gujarati"))))))), /*#__PURE__*/React.createElement("style", null, `
+        @media (max-width: 1000px) {
+          .co-hero, .co-grid, .co-form-grid { grid-template-columns: 1fr !important; }
+        }
+      `));
+  };
+  Object.assign(window, {
+    ContactPage
+  });
+})();
+;
+(function () {
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "#7A2340"
+  } /*EDITMODE-END*/;
+  const ACCENT_PALETTE = [{
+    name: "Vermilion",
+    v: "#B23A2E"
+  }, {
+    name: "Sindoor",
+    v: "#C14A2A"
+  }, {
+    name: "Wine",
+    v: "#7A2340"
+  }, {
+    name: "Terracotta",
+    v: "#A8663C"
+  }, {
+    name: "Gold",
+    v: "#B8955F"
+  }, {
+    name: "Forest",
+    v: "#3E6148"
+  }, {
+    name: "Ink Teal",
+    v: "#2A4A5A"
+  }, {
+    name: "Ink",
+    v: "#1A1410"
+  }];
+  const App = () => {
+    const [route, setRouteRaw] = React.useState(() => (() => {
+      try {
+        return localStorage.getItem("jf_route") || "home";
+      } catch (_) {
+        return "home";
+      }
+    })());
+    const [accent, setAccentRaw] = React.useState(TWEAK_DEFAULTS.accent);
+    const [tweakMode, setTweakMode] = React.useState(false);
+    const setRoute = r => {
+      setRouteRaw(r);
+      try {
+        localStorage.setItem("jf_route", r);
+      } catch (_) {}
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+    };
+    const setAccent = v => {
+      setAccentRaw(v);
+      document.documentElement.style.setProperty("--accent", v);
+    };
+    React.useEffect(() => {
+      document.documentElement.style.setProperty("--accent", accent);
+    }, [accent]);
+
+    // Tweaks protocol
+    React.useEffect(() => {
+      const handler = e => {
+        if (!e.data) return;
+        if (e.data.type === "__activate_edit_mode") setTweakMode(true);
+        if (e.data.type === "__deactivate_edit_mode") setTweakMode(false);
+      };
+      window.addEventListener("message", handler);
+      return () => window.removeEventListener("message", handler);
+    }, []);
+    const Page = {
+      home: HomePage,
+      about: AboutPage,
+      collection: CollectionPage,
+      process: ProcessPage,
+      sustainability: SustainabilityPage,
+      contact: ContactPage
+    }[route] || HomePage;
+    return /*#__PURE__*/React.createElement("div", {
+      "data-screen-label": `Jagannath · ${route}`
+    }, /*#__PURE__*/React.createElement(Nav, {
+      route: route,
+      setRoute: setRoute,
+      accent: accent,
+      setAccent: setAccent
+    }), /*#__PURE__*/React.createElement("main", {
+      key: route
+    }, /*#__PURE__*/React.createElement(Page, {
+      setRoute: setRoute
+    })), /*#__PURE__*/React.createElement(Footer, {
+      setRoute: setRoute
+    }), tweakMode && /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: "fixed",
+        bottom: 24,
+        right: 24,
+        zIndex: 200,
+        background: "var(--bone)",
+        border: "1px solid var(--ink-20)",
+        borderRadius: 12,
+        padding: 20,
+        width: 300,
+        boxShadow: "var(--shadow-lg)",
+        fontFamily: "var(--sans)"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: 16
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: "var(--serif)",
+        fontSize: 20,
+        letterSpacing: "-0.01em"
+      }
+    }, "Tweaks"), /*#__PURE__*/React.createElement("span", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 10
+      }
+    }, "Accent color")), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gap: 10
+      }
+    }, ACCENT_PALETTE.map(c => /*#__PURE__*/React.createElement("button", {
+      key: c.v,
+      onClick: () => setAccent(c.v),
+      title: c.name,
+      style: {
+        padding: 0,
+        width: "100%",
+        aspectRatio: "1",
+        borderRadius: 8,
+        background: c.v,
+        border: accent === c.v ? "2px solid var(--ink)" : "1px solid var(--ink-10)",
+        outline: accent === c.v ? "2px solid var(--bone)" : "none",
+        outlineOffset: -4,
+        cursor: "pointer"
+      }
+    }))), /*#__PURE__*/React.createElement("div", {
+      className: "mono",
+      style: {
+        color: "var(--ink-60)",
+        fontSize: 10,
+        marginTop: 14,
+        textAlign: "center"
+      }
+    }, "Current \xB7 ", ACCENT_PALETTE.find(c => c.v === accent)?.name || "Custom")));
+  };
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(/*#__PURE__*/React.createElement(App, null));
+})();
+</script>
+</body></html>
