@@ -3329,12 +3329,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
       try {
         // Formspree endpoint — replace with your own after signing up at formspree.io
         // Submissions land in jagannathfabrics@gmail.com
-        const FORMSPREE_ID = "YOUR_FORM_ID"; // paste your Formspree form ID here
-        if (FORMSPREE_ID === "YOUR_FORM_ID") {
-          setSending(false);
-          setSendError("ready");
-          return;
-        }
+        const FORMSPREE_ID = "xbdqnqle";
         const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
           method: "POST",
           headers: {
